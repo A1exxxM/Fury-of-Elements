@@ -1,0 +1,10 @@
+{
+  "typescript.suggest.paths": false ,
+  "javascript.suggest.paths": false,
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}
