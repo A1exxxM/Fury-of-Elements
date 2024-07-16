@@ -1,6 +1,7 @@
 <template>
     <section class="elems__types container">
         <h2 class="elems__types-title">Стихии</h2>
+        <div class="elems__types-descr">Описание системы стихий</div>
         <div class="elems__types-btns">
             <button :key="elem" v-for="elem in $store.state.elements" class="elems__types-btns_item" @click="changeElem(elem)">{{ elem.title }} </button>
         </div>

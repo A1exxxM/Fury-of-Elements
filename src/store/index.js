@@ -4,6 +4,7 @@ const store = createStore({
     state () {
       return {
         currentElem: '',
+		currentClass: 0,
         elements: [
         	{
 				id: 0,
@@ -48,9 +49,35 @@ const store = createStore({
         ],
         classes: [
 			{
+				id: 0,
+				path: 'warrior',
 				title: 'Воин',
 				descr: 'Описание воина',
 				ability: 'Врожденная способность воина',
+				subclasses: [
+					{title: 'Подкласс первый', descr: 'Краткое описание', element: 'Элемент'},
+					{title: 'Подкласс первый', descr: 'Краткое описание', element: 'Элемент'},
+					{title: 'Подкласс первый', descr: 'Краткое описание', element: 'Элемент'},
+				]
+			},
+			{
+				id: 1,
+				path: 'bard',
+				title: 'Бард',
+				descr: 'Описание барда',
+				ability: 'Врожденная способность барда',
+				subclasses: [
+					{title: 'Подкласс первый', descr: 'Краткое описание', element: 'Элемент'},
+					{title: 'Подкласс первый', descr: 'Краткое описание', element: 'Элемент'},
+					{title: 'Подкласс первый', descr: 'Краткое описание', element: 'Элемент'},
+				]
+			},
+			{
+				id: 2,
+				path: 'mage',
+				title: 'Маг',
+				descr: 'Описание мага',
+				ability: 'Врожденная способность маг',
 				subclasses: [
 					{title: 'Подкласс первый', descr: 'Краткое описание', element: 'Элемент'},
 					{title: 'Подкласс первый', descr: 'Краткое описание', element: 'Элемент'},
@@ -71,7 +98,10 @@ const store = createStore({
     mutations: {
       changeElem(state, elem) {
         state.currentElem = elem.id;
-      }
+      },
+	  selectClass(state, item) {
+		state.currentClass = item.id
+	  }
     },
     actions: {
         

@@ -1,5 +1,4 @@
 <template>
-    <elems-navbar/>
     <section class="elems__intro container">
         <h1 class="elems__intro-title">Fury of Elements</h1>
         <h2 class="elems__intro-subtitle">Вдохновлено ДнД опытом</h2>

@@ -1,5 +1,5 @@
 <template>
-  <section class="elems__lore">
+  <section class="elems__lore container">
     <h2 class="elems__lore-title">Лор</h2>
   </section>
 </template>

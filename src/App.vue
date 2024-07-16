@@ -1,21 +1,17 @@
 <template>
-	<elems-hello/>
-	<elems-lore/>
-	<elems-types @changeElem="changeElem"/>
-	<elems-classes/>
-	<elems-properties/>
+	<elems-navbar/>
+	<router-view>
+		
+	</router-view>
 </template>
 
 <script>
-import ElemsHello from '@/components/ElemsHello/ElemsHello.vue';
-import ElemsTypes from '@/components/ElemsTypes/ElemsTypes.vue';
-import ElemsLore from '@/components/ElemsLore/ElemsLore.vue';
-import ElemsClasses from '@/components/ElemsClasses/ElemsClasses.vue';
-import ElemsProperties from '@/components/ElemsProperties/ElemsProperties.vue';
+
+
 
 export default {
 
-	components: { ElemsHello,ElemsTypes,ElemsLore,ElemsClasses,ElemsProperties },
+	
 	methods: {
 		changeElem(elem) {
 			this.$store.commit('changeElem', elem)
@@ -42,5 +38,8 @@ export default {
 	section {
 		min-height: 900px;
 		text-align: center;
+	}
+	.page {
+		padding-top: 150px;
 	}
 </style>

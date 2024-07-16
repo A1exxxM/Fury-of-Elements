@@ -1,0 +1,70 @@
+<template>
+  <section class="classes container page">
+    <h2 class="classes__title">Классы</h2>
+    <div class="classes__wrapper">
+      <div class="classes__info">
+        <div class="classes__icon"></div>
+		<div class="classes__name">{{ $store.state.classes[$store.state.currentClass].title }}</div>
+        <div class="classes__page" @click="$router.push(`/classes/${$store.state.classes[$store.state.currentClass].path}`)">Подробнее</div>
+      </div>
+      <div class="classes__descr">{{ $store.state.classes[$store.state.currentClass].descr }}
+      </div>
+    </div>
+    <ul class="classes__list">
+		<li class="classes__list-item" :key="item" v-for="item in $store.state.classes" @click="selectClass(item)">{{ item.title }}</li>
+	</ul>
+  </section>
+</template>
+
+<script>
+export default {
+	methods: {
+		selectClass(item) {
+			this.$store.commit('selectClass', item)
+		}
+ 	}
+}
+</script>
+
+<style scoped lang="scss">
+	.classes {
+		color: #fff;
+		&__wrapper {
+			margin-top: 100px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0 150px
+		}
+		&__icon {
+			background-color: #000;
+			display: block;
+			height: 250px;
+			width: 250px;
+			margin: 0 auto;
+		}
+		&__descr {
+			padding: 50px;
+			width: 50%;
+		}
+		&__page {
+			margin-top: 50px;
+			cursor: pointer;
+		}
+		&__name {
+			margin-top: 20px;
+		}
+		&__list {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 50%;
+			margin: 0 auto;
+			margin-top: 150px;
+			&-item {
+				list-style-type: none;
+				cursor: pointer;
+			}
+		}
+	}
+</style>
