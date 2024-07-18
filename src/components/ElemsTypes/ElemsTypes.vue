@@ -7,6 +7,9 @@
         </div>
         <div class="elems__types-preview" v-if="$store.state.currentElem !== ''">
             <h2 class="elems__types-preview_title">{{$store.state.elements[$store.state.currentElem].title}}</h2>
+            <div class="elems__types-preview_img">
+                <img :src=" $store.state.elements[$store.state.currentElem].img " alt="Изображение">
+            </div>
             <div class="elems__types-preview_descr">{{$store.state.elements[$store.state.currentElem].descr}}</div>
             <h2 class="elems__types-preview_combinations_title">Комбинации</h2>
             <div class="elems__types-preview_combinations">
@@ -58,6 +61,14 @@ export default {
                 align-items: center;
                 justify-content: space-between;
                 margin-top: 40px;
+            }
+            &_img {
+                width: 300px;
+                height: 300px;
+                margin: 0 auto;
+                img {
+                    width: 100%;
+                }
             }
         }
     }

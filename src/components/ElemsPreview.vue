@@ -27,7 +27,7 @@ export default {
 	components: { ElemsHello,ElemsTypes,ElemsLore,ElemsClasses,ElemsProperties,ElemsTriggers,ElemsSkills,ElemsPiercing,ElemsSpells },
 	methods: {
 		changeElem(elem) {
-			this.$emit('changeElem', elem)
+			this.$store.commit('changeElem', elem)
 		}
 	}
 }

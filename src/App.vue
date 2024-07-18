@@ -10,12 +10,8 @@
 
 
 export default {
-
-	
 	methods: {
-		changeElem(elem) {
-			this.$store.commit('changeElem', elem)
-		}
+		
 	}
 }
 
@@ -27,6 +23,7 @@ export default {
 		font-optical-sizing: auto;
 		font-weight: 400;
 		font-style: normal;
+		box-sizing: border-box;
 	}
 	body {
 		background-color: #474A51;
