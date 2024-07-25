@@ -6,6 +6,9 @@ const store = createStore({
         currentElem: '',
 		currentClass: 0,
 		currentClassType: 'hits',
+		currentCombination: 0,
+		currentType: 0,
+		typesRules: ['Правило 1','Правило 2','Правило 3'],
 		properties: [
 			{
 				id: 0,
@@ -23,49 +26,98 @@ const store = createStore({
 				value: 'equipment'
 			},
 		],
+		lore: {
+			world: [
+				{
+					title: 'Структура мира',
+					img: '/Fury-of-Elements/src/assets/img/maps/world.jpg',
+					descr: 'Описание мира'
+				},
+				{
+					title: 'Великий катаклизм',
+					img: '/Fury-of-Elements/src/assets/img/maps/world.jpg',
+					descr: 'Описание Катаклизма'
+				},
+				{
+					title: 'Катарат',
+					img: '/Fury-of-Elements/src/assets/img/maps/world.jpg',
+					descr: 'Описание Катарата'
+				}
+			],
+			countries: [
+				{	
+					title: 'Аронвайд',
+					img: '/Fury-of-Elements/src/assets/img/maps/aronvaid.jpg',
+					descr: 'Описание Аронвайда'
+				},
+				{	
+					title: 'Тиссилия',
+					img: '/Fury-of-Elements/src/assets/img/maps/tissilia.jpg',
+					descr: 'Описание Тиссилии'
+				},
+				{	
+					title: 'Королевство Люмиос',
+					img: '/Fury-of-Elements/src/assets/img/maps/aronvaid.jpg',
+					descr: 'Описание Люмиоса'
+				},
+				{	
+					title: 'Земли Тародара',
+					img: '/Fury-of-Elements/src/assets/img/maps/aronvaid.jpg',
+					descr: 'Описание Тародара'
+				},
+			]
+		},
         elements: [
         	{
 				id: 0,
 				title: 'Кровь',
 				descr: 'Описание крови',
-				img: '/src/assets/img/blood.jpg',
+				path: 'blood',
+				lore: 'Описание лора стихии',
+				img: '/Fury-of-Elements/src/assets/img/elements/blood.jpg',
 				combination: [
-					{title: 'Пустота', descr: 'Описание взаимодействия с пустотой'},
-					{title: 'Природа', descr: 'Описание взаимодействия с природой'}, 
-					{title: 'Свет', descr: 'Описание взаимодействия с светом'}
+					{title: 'Пустота', name: 'Название 1', id: 0, descr: 'Описание взаимодействия с пустотой'},
+					{title: 'Природа', name: 'Название 2', id: 1, descr: 'Описание взаимодействия с природой'}, 
+					{title: 'Свет', name: 'Название 3', id: 2, descr: 'Описание взаимодействия с светом'}
 				], 
         	},
 			{
 				id: 1,
 				title: 'Пустота',
 				descr: 'Описание пустоты',
-				img: '/src/assets/img/void.jpg',
+				path: 'void',
+				lore: 'Описание лора стихии',
+				img: '/Fury-of-Elements/src/assets/img/elements/void.jpg',
 				combination: [
-					{title: 'Кровь', descr: 'Описание взаимодействия с кровью'},
-					{title: 'Природа', descr: 'Описание взаимодействия с природой'}, 
-					{title: 'Свет', descr: 'Описание взаимодействия с светом'}
+					{title: 'Кровь', name: 'Название 1', id: 0, descr: 'Описание взаимодействия с кровью'},
+					{title: 'Природа', name: 'Название 2', id: 1, descr: 'Описание взаимодействия с природой'}, 
+					{title: 'Свет', name: 'Название 3', id: 2, descr: 'Описание взаимодействия с светом'}
 				], 
         	},
 			{
 				id: 2,
 				title: 'Природа',
 				descr: 'Описание природы',
-				img: '/src/assets/img/nature.jpg',
+				path: 'nature',
+				lore: 'Описание лора стихии',
+				img: '/Fury-of-Elements/src/assets/img/elements/nature.jpg',
 				combination: [
-					{title: 'Кровь', descr: 'Описание взаимодействия с кровью'},
-					{title: 'Пустота', descr: 'Описание взаимодействия с пустотой'}, 
-					{title: 'Свет', descr: 'Описание взаимодействия со светом'}
+					{title: 'Кровь', name: 'Название 1', id: 0, descr: 'Описание взаимодействия с кровью'},
+					{title: 'Пустота', name: 'Название 2', id: 1, descr: 'Описание взаимодействия с пустотой'}, 
+					{title: 'Свет', name: 'Название 3', id: 2, descr: 'Описание взаимодействия со светом'}
 				], 
         	},
 			{
 				id: 3,
 				title: 'Свет',
 				descr: 'Описание света',
-				img: '/src/assets/img/light.jpg',
+				path: 'light',
+				lore: 'Описание лора стихии',
+				img: '/Fury-of-Elements/src/assets/img/elements/light.jpg',
 				combination: [
-					{title: 'Кровь', descr: 'Описание взаимодействия с кровью'},
-					{title: 'Пустота', descr: 'Описание взаимодействия с пустотой'}, 
-					{title: 'Природа', descr: 'Описание взаимодействия с природой'}
+					{title: 'Кровь', name: 'Название 1', id: 0, descr: 'Описание взаимодействия с кровью'},
+					{title: 'Пустота', name: 'Название 2', id: 1,  descr: 'Описание взаимодействия с пустотой'}, 
+					{title: 'Природа', name: 'Название 3', id: 2,  descr: 'Описание взаимодействия с природой'}
 				], 
         	},
         ],
@@ -191,6 +243,9 @@ const store = createStore({
 	  },
 	  changeCurrentClassType(state, property) {
 		state.currentClassType = property.value
+	  },
+	  changeActiveCombination(state, combination) {
+		state.currentCombination = combination.id
 	  }
     },
     actions: {

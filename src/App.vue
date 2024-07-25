@@ -37,6 +37,6 @@ export default {
 		text-align: center;
 	}
 	.page {
-		padding-top: 150px;
+		padding: 150px 0;
 	}
 </style>

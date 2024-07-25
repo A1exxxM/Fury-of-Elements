@@ -8,6 +8,7 @@ import ElemsSkillsPage from '@/components/ElemsSkills/ElemsSkillsPage.vue';
 import ElemsSpellsPage from '@/components/ElemsSpells/ElemsSpellsPage.vue';
 import ElemsTriggersPage from '@/components/ElemsTriggers/ElemsTriggersPage.vue';
 import ElemsClassesItem from '@/components/ElemsClasses/ElemsClassesItem.vue';
+import ElemsTypesItem from '@/components/ElemsTypes/ElemsTypesItem.vue'
 
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
@@ -47,6 +48,10 @@ const router = createRouter({
 		{
 			path: '/types',
 			component: ElemsTypesPage
+		},
+		{
+			path: '/types/:path',
+			component: ElemsTypesItem
 		}
 	]
 })
