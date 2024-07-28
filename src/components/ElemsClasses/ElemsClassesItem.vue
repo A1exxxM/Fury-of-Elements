@@ -11,8 +11,7 @@
         <div class="class__ability">Особенность класса: <br> <span>{{$store.state.classes[$store.state.currentClass].ability}}</span></div>
         <div class="class__properties">
             <div class="class__properties-type">
-                <div class="class__properties-type_item" :key="property" v-for="property in $store.state.properties" @click="changeCurrentClassType(property)">{{property.name}}</div>
-                
+                <big-button :key="property" v-for="property in $store.state.properties" @click="changeCurrentClassType(property)">{{property.name}}</big-button>
             </div>
             <div class="class__properties-preview">
                 <div class="class__properties-preview_item" 
@@ -46,7 +45,7 @@ export default {
             this.$store.commit('changeCurrentClassType', property)
         },
         toggleActiveClass($event) {
-            $event.target.nextElementSibling.classList.toggle('class__spells-item_descr_active')
+            $event.target.nextElementSibling.classList.toggle('class__spells-item_descr_active');
         }
     }
 }

@@ -36,6 +36,9 @@ export default {
 		min-height: 900px;
 		text-align: center;
 	}
+	ul {
+		padding: 0;
+	}
 	.page {
 		padding: 150px 0;
 	}

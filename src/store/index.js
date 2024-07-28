@@ -8,7 +8,10 @@ const store = createStore({
 		currentClassType: 'hits',
 		currentCombination: 0,
 		currentType: 0,
+		currentInsight: 0,
 		typesRules: ['Правило 1','Правило 2','Правило 3'],
+		insightsRules: ['Правило 1','Правило 2','Правило 3'],
+		currentFilter: 'first',
 		properties: [
 			{
 				id: 0,
@@ -227,10 +230,106 @@ const store = createStore({
 		insights: {
 			descr: 'Описание системы озарений',
 			items: [
-				{title: 'Сила', descr: 'Описание механики силы'},
-				{title: 'Ловкость', descr: 'Описание механики ловкости'},
-				{title: 'Интеллект', descr: 'Описание механики интеллекта'}
+				{title: 'Сила', descr: 'Описание механики силы', id: 0},
+				{title: 'Ловкость', descr: 'Описание механики ловкости', id: 1},
+				{title: 'Интеллект', descr: 'Описание механики интеллекта', id: 2}
 			]
+		},
+		triggers: {
+			descr: 'Краткое описание системы триггеров',
+			rules: ['Правило 1', 'Правило 2', 'Правило 3'],
+			filters: [
+				{
+					filter: 'first',
+					title: 'Фильтр 1'
+				},
+				{
+					filter: 'second',
+					title: 'Фильтр 2'
+				},
+				{
+					filter: 'third',
+					title: 'Фильтр 3'
+				},
+				{
+					filter: 'fourth',
+					title: 'Фильтр 4'
+				},
+			],
+			items: {
+				first: [
+					{
+						title: 'Название Первый 1',
+						descr: 'Описание Первый 1'
+					},
+					{
+						title: 'Название Первый 1',
+						descr: 'Описание Первый 1'
+					},
+					{
+						title: 'Название Первый 1',
+						descr: 'Описание Первый 1'
+					},
+					{
+						title: 'Название Первый 1',
+						descr: 'Описание Первый 1'
+					},
+				],
+				second: [
+					{
+						title: 'Название Второй 1',
+						descr: 'Описание Второй 1'
+					},
+					{
+						title: 'Название Первый 1',
+						descr: 'Описание Первый 1'
+					},
+					{
+						title: 'Название Первый 1',
+						descr: 'Описание Первый 1'
+					},
+					{
+						title: 'Название Первый 1',
+						descr: 'Описание Первый 1'
+					},
+				],
+				third: [
+					{
+						title: 'Название Третий 1',
+						descr: 'Описание Третий 1'
+					},
+					{
+						title: 'Название Первый 1',
+						descr: 'Описание Первый 1'
+					},
+					{
+						title: 'Название Первый 1',
+						descr: 'Описание Первый 1'
+					},
+					{
+						title: 'Название Первый 1',
+						descr: 'Описание Первый 1'
+					},
+				],
+				fourth: [
+					{
+						title: 'Название Четвертый 1',
+						descr: 'Описание Четвертый 1'
+					},
+					{
+						title: 'Название Первый 1',
+						descr: 'Описание Первый 1'
+					},
+					{
+						title: 'Название Первый 1',
+						descr: 'Описание Первый 1'
+					},
+					{
+						title: 'Название Первый 1',
+						descr: 'Описание Первый 1'
+					},
+				]
+			}
 		}
       }
     },
@@ -246,6 +345,12 @@ const store = createStore({
 	  },
 	  changeActiveCombination(state, combination) {
 		state.currentCombination = combination.id
+	  },
+	  changeCurrentInsight(state, item) {
+		state.currentInsight = item.id
+	  },
+	  changeCurrentFilter(state, filter) {
+		state.currentFilter = filter.filter;
 	  }
     },
     actions: {

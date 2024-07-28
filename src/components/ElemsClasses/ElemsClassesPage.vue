@@ -1,6 +1,6 @@
 <template>
   <section class="classes container page">
-    <h2 class="classes__title">Классы</h2>
+    <page-title>Классы</page-title>
     <div class="classes__wrapper">
       <div class="classes__info">
         <div class="classes__icon"></div>
@@ -11,7 +11,7 @@
       </div>
     </div>
     <ul class="classes__list">
-		<li class="classes__list-item" :key="item" v-for="item in $store.state.classes" @click="selectClass(item)">{{ item.title }}</li>
+		<big-button class="classes__list-item"  :key="item" v-for="item in $store.state.classes" @click="selectClass(item)">{{ item.title }}</big-button>
 	</ul>
   </section>
 </template>
@@ -62,8 +62,7 @@ export default {
 			margin: 0 auto;
 			margin-top: 150px;
 			&-item {
-				list-style-type: none;
-				cursor: pointer;
+				color: #000;
 			}
 		}
 	}

@@ -1,6 +1,6 @@
 <template>
     <section class="lore page container">
-        <h2 class="lore__title">Лор</h2>
+        <page-title>Лор</page-title>
         <div class="lore__preview">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum inventore beatae dolor voluptas temporibus delectus, natus minima libero eveniet illo dignissimos commodi asperiores! Soluta, quod impedit nesciunt tenetur esse itaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam eligendi quae provident cum nemo necessitatibus. Qui cupiditate facere praesentium eligendi, architecto illum aspernatur provident recusandae quasi. Vero obcaecati expedita mollitia.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum inventore beatae dolor voluptas temporibus delectus, natus minima libero eveniet illo dignissimos commodi asperiores! Soluta, quod impedit nesciunt tenetur esse itaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam eligendi quae provident cum nemo necessitatibus. Qui cupiditate facere praesentium eligendi, architecto illum aspernatur provident recusandae quasi. Vero obcaecati expedita mollitia.</div>
         <div class="lore__world" :key="item" v-for="item in $store.state.lore.world">
             <h3 class="lore__world-title">{{ item.title }}</h3>

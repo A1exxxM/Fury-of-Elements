@@ -14,13 +14,13 @@
         <div class="type__combinations">
             <h3 class="type__combinations-title">Комбинации</h3>
             <ul class="type__combinations-btns">
-                <li class="type__combinations-btns_item" 
-                :key="combination" 
+                
+                <big-button :key="combination" 
                 v-for="combination in $store.state.elements[$store.state.currentType].combination"
                 @click="changeActiveCombination(combination)"
                 >
                 {{ combination.title }}
-                </li>
+                </big-button>
             </ul>
             <div class="type__combinations-result">
                 <div class="type__combinations-result_title">{{ $store.state.elements[$store.state.currentType].combination[$store.state.currentCombination].name }}</div>
