@@ -3,7 +3,9 @@
     <page-title>Классы</page-title>
     <div class="classes__wrapper">
       <div class="classes__info">
-        <div class="classes__icon"></div>
+        <div class="classes__icon">
+			<img :src="$store.state.classes[$store.state.currentClass].img" :alt="$store.state.classes[$store.state.currentClass].title">
+		</div>
 		<div class="classes__name">{{ $store.state.classes[$store.state.currentClass].title }}</div>
         <div class="classes__page" @click="$router.push(`/classes/${$store.state.classes[$store.state.currentClass].path}`)">Подробнее</div>
       </div>
@@ -37,11 +39,14 @@ export default {
 			padding: 0 150px
 		}
 		&__icon {
-			background-color: #000;
 			display: block;
 			height: 250px;
 			width: 250px;
 			margin: 0 auto;
+			img {
+				width: 100%;
+				height: 100%;
+			}
 		}
 		&__descr {
 			padding: 50px;

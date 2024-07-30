@@ -3,7 +3,6 @@ import { createStore } from 'vuex';
 const store = createStore({
     state () {
       return {
-        currentElem: '',
 		currentClass: 0,
 		currentClassType: 'hits',
 		currentCombination: 0,
@@ -131,6 +130,7 @@ const store = createStore({
 				title: 'Воин',
 				descr: 'Описание воина',
 				ability: 'Врожденная способность воина',
+				img: '/Fury-of-Elements/src/assets/img/classes/warrior.jpg',
 				subclasses: [
 					{title: 'Подкласс первый', descr: 'Краткое описание', element: 'Элемент'},
 					{title: 'Подкласс первый', descr: 'Краткое описание', element: 'Элемент'},
@@ -168,6 +168,7 @@ const store = createStore({
 				title: 'Бард',
 				descr: 'Описание барда',
 				ability: 'Врожденная способность барда',
+				img: '/Fury-of-Elements/src/assets/img/classes/bard.jpg',
 				subclasses: [
 					{title: 'Подкласс первый', descr: 'Краткое описание', element: 'Элемент'},
 					{title: 'Подкласс первый', descr: 'Краткое описание', element: 'Элемент'},
@@ -200,6 +201,7 @@ const store = createStore({
 				title: 'Маг',
 				descr: 'Описание мага',
 				ability: 'Врожденная способность мага',
+				img: '/Fury-of-Elements/src/assets/img/classes/mage.jpg',
 				subclasses: [
 					{title: 'Подкласс первый', descr: 'Краткое описание', element: 'Элемент'},
 					{title: 'Подкласс первый', descr: 'Краткое описание', element: 'Элемент'},
@@ -212,6 +214,39 @@ const store = createStore({
 				],
 				hits: [
 					{name: 'Кость Хитов', value: '1к10 = 1 за каждый уровень мага'},
+					{name: 'Кость Хитов', value: '1к10 = 1 за каждый уровень мага'},
+					{name: 'Кость Хитов', value: '1к10 = 1 за каждый уровень мага'}
+				],
+				skills: [
+					{name: 'Броня', value: '1 вид брони или 2 вид брони'},
+					{name: 'Оружие', value: '1 тип оружия или специальное оружие мага'},
+					{name: 'Спасброски', value: 'Интеллект'}
+				],
+				equipment: [
+					{name: 'Стартовая броня', value: 'Доспех 1 или доспех 2'},
+					{name: 'Стартовое оружие', value: 'Набор оружия 1 или набор оружия 2'},
+					{name: 'Стартовый набор инструментов', value: 'Набор 1 или набор 2'}
+				]
+			},
+			{
+				id: 3,
+				path: 'rogue',
+				title: 'Разбойник',
+				descr: 'Описание разбойника',
+				ability: 'Врожденная способность разбойника',
+				img: '/Fury-of-Elements/src/assets/img/classes/rogue.jpg',
+				subclasses: [
+					{title: 'Подкласс первый', descr: 'Краткое описание', element: 'Элемент'},
+					{title: 'Подкласс первый', descr: 'Краткое описание', element: 'Элемент'},
+					{title: 'Подкласс первый', descr: 'Краткое описание', element: 'Элемент'},
+				],
+				stats: [
+					{title: 'Здоровье', value: '10'},
+					{title: 'Защита', value: '15'},
+					{title: 'Ячейки заклинаний', value: '4'},
+				],
+				hits: [
+					{name: 'Кость Хитов', value: '1к10 = 1 за каждый уровень разбойника'},
 					{name: 'Кость Хитов', value: '1к10 = 1 за каждый уровень мага'},
 					{name: 'Кость Хитов', value: '1к10 = 1 за каждый уровень мага'}
 				],
@@ -330,6 +365,36 @@ const store = createStore({
 					},
 				]
 			}
+		},
+		skills: {
+			descr: 'Описание системы боевых умений',
+			rules: ['Правило 1', 'Правило 2', 'Правило 3'],
+			items: [
+				{
+					title: 'Название',
+					descr: 'Описание'
+				},
+				{
+					title: 'Название',
+					descr: 'Описание'
+				},
+				{
+					title: 'Название',
+					descr: 'Описание'
+				},
+				{
+					title: 'Название',
+					descr: 'Описание'
+				},
+				{
+					title: 'Название',
+					descr: 'Описание'
+				},
+				{
+					title: 'Название',
+					descr: 'Описание'
+				},
+			]
 		}
       }
     },

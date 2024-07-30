@@ -2,34 +2,19 @@
     <section class="elems__types container">
         <h2 class="elems__types-title">Стихии</h2>
         <div class="elems__types-descr">Описание системы стихий</div>
-        <div class="elems__types-btns">
-            <button :key="elem" v-for="elem in $store.state.elements" class="elems__types-btns_item" @click="changeElem(elem)">{{ elem.title }} </button>
-        </div>
-        <div class="elems__types-preview" v-if="$store.state.currentElem !== ''">
-            <h2 class="elems__types-preview_title">{{$store.state.elements[$store.state.currentElem].title}}</h2>
-            <div class="elems__types-preview_img">
-                <img :src=" $store.state.elements[$store.state.currentElem].img " alt="Изображение">
-            </div>
-            <div class="elems__types-preview_descr">{{$store.state.elements[$store.state.currentElem].descr}}</div>
-            <h2 class="elems__types-preview_combinations_title">Комбинации</h2>
-            <div class="elems__types-preview_combinations">
-                <div class="elems__types-preview_combination" :key="item" v-for="item in $store.state.elements[$store.state.currentElem].combination">
-                    <h3 class="elems__types-preview_combination_title">{{item.title}}</h3>
-                    <div class="elems__types-preview_combination_descr">{{item.descr}}</div>
-                </div>
-            </div>
-        </div>
-        <div v-else> Выберите стихию</div>
+        <ul class="elems__types-items">
+            <li class="elems__types-items_item" :key="item" v-for="item in $store.state.elements">
+                <img class="elems__types-items_img" :src="item.img" :alt="item.title">
+                <div class="elems__types-items_title">{{item.title}}</div>
+            </li>
+        </ul>
+        
     </section>
 </template>
 
 <script>
 export default {
-    methods: {
-        changeElem(elem) {
-            this.$emit('changeElem', elem)
-        }
-    }
+    
 }
 </script>
 
@@ -39,37 +24,27 @@ export default {
         &-title {
             font-size: 50px;
         }
-        &-btns {
-            margin: 0 auto;
-            margin-top: 50px;
-            width: 50%;
+        &-items {
             display: flex;
             align-items: center;
             justify-content: space-between;
-        }
-        &-preview {
-            margin-top: 50px;
-            &_title {
-                font-size: 40px;
-            }
-            &_descr {
-                font-size: 20px;
-            }
-            &_combinations {
-                display: flex;
-                margin: 0 auto;
-                align-items: center;
-                justify-content: space-between;
-                margin-top: 40px;
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 150px;
+            &_item {
+                list-style-type: none;
             }
             &_img {
-                width: 300px;
-                height: 300px;
-                margin: 0 auto;
-                img {
-                    width: 100%;
-                }
+                width: 220px;
+                height: 220px;
+                border-radius: 15%;
             }
+            &_title {
+                font-size: 25px;
+                margin-top: 30px;
+            }
+            
         }
+        
     }
 </style>

@@ -5,7 +5,6 @@ import ElemsClassesPage from '@/components/ElemsClasses/ElemsClassesPage.vue';
 import ElemsLorePage from '@/components/ElemsLore/ElemsLorePage.vue';
 import ElemsPropertiesPage from '@/components/ElemsProperties/ElemsPropertiesPage.vue';
 import ElemsSkillsPage from '@/components/ElemsSkills/ElemsSkillsPage.vue';
-import ElemsSpellsPage from '@/components/ElemsSpells/ElemsSpellsPage.vue';
 import ElemsTriggersPage from '@/components/ElemsTriggers/ElemsTriggersPage.vue';
 import ElemsClassesItem from '@/components/ElemsClasses/ElemsClassesItem.vue';
 import ElemsTypesItem from '@/components/ElemsTypes/ElemsTypesItem.vue'
@@ -36,10 +35,6 @@ const router = createRouter({
 		{
 			path: '/skills',
 			component: ElemsSkillsPage
-		},
-		{
-			path: '/spells',
-			component: ElemsSpellsPage
 		},
 		{
 			path: '/triggers',

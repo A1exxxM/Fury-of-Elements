@@ -8,7 +8,6 @@
             <span class="navbar__btns-item" @click="$router.push('/insights')">Озарения</span>
             <span class="navbar__btns-item" @click="$router.push('/triggers')">Тригеры</span>
             <span class="navbar__btns-item" @click="$router.push('/skills')">Боевые умения</span>
-            <span class="navbar__btns-item" @click="$router.push('/spells')">Заклинания</span>
             <span class="navbar__btns-item">Создание персонажа</span>
         </div>
     </nav>
@@ -37,6 +36,7 @@ export default {
             justify-content: space-between;
             &-item {
                 cursor: pointer;
+                font-size: 20px;
             }
         }
     }

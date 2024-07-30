@@ -35,5 +35,7 @@ export default {
 </script>
 
 <style>
-
+    .elems {
+        padding-bottom: 150px;
+    }
 </style>

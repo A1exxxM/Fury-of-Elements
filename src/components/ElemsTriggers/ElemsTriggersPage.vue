@@ -8,11 +8,15 @@
         <div class="triggers__filters">
             <big-button @click="changeCurrentFilter(filter)" :key="filter" v-for="filter in $store.state.triggers.filters">{{ filter.title }}</big-button>
         </div>
-        <ul class="triggers__blocks">
-            <li class="triggers__blocks-item" :key='item' v-for="item in $store.state.triggers.items[$store.state.currentFilter]">
-                <div class="triggers__blocks-item_title">{{ item.title }}</div>
-                <div class="triggers__blocks-item_descr">{{ item.descr }}</div>
-            </li>
+        <ul class="triggers__cards">
+            <card-item :key='item' v-for="item in $store.state.triggers.items[$store.state.currentFilter]">
+                <template v-slot:card-item_title>
+                    <span>{{item.title}}</span>
+                </template>
+                <template v-slot:card-item_descr>
+                    <span>{{item.descr}}</span>
+                </template>
+            </card-item>
         </ul>
     </section>    
 </template>
@@ -37,30 +41,8 @@ export default {
             align-items: center;
             justify-content: space-between;
         }
-        &__blocks {
+        &__cards {
             margin-top: 50px;
-            &-item {
-                background-color: #fff;
-                list-style-type: none;
-                border: 2px solid black;
-                min-height: 200px;
-                border-radius: 10px;
-                margin-bottom: 30px;
-                &:last-child {
-                    margin-bottom: 0;
-                }
-                &_title {
-                    color: #fff;
-                    background-color: #000;
-                    font-size: 25px;
-                    padding: 17px;
-                    text-align: left;
-                }
-                &_descr {
-                    font-size: 20px;
-                    padding: 15px;
-                }
-            }
         }
     }
 </style>
