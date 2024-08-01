@@ -11,6 +11,7 @@ const store = createStore({
 		typesRules: ['Правило 1','Правило 2','Правило 3'],
 		insightsRules: ['Правило 1','Правило 2','Правило 3'],
 		currentFilter: 'first',
+		navbar: false,
 		properties: [
 			{
 				id: 0,
@@ -59,12 +60,12 @@ const store = createStore({
 				},
 				{	
 					title: 'Королевство Люмиос',
-					img: '/Fury-of-Elements/src/assets/img/maps/aronvaid.jpg',
+					img: '/Fury-of-Elements/src/assets/img/maps/lumios.jpg',
 					descr: 'Описание Люмиоса'
 				},
 				{	
 					title: 'Земли Тародара',
-					img: '/Fury-of-Elements/src/assets/img/maps/aronvaid.jpg',
+					img: '/Fury-of-Elements/src/assets/img/maps/tarondar.jpg',
 					descr: 'Описание Тародара'
 				},
 			]

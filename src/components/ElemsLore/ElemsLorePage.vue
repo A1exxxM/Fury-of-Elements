@@ -59,5 +59,10 @@ export default {
                 font-size: 35px;
             }
         }
+        &__countries {
+            &-img {
+                width: 80%;
+            }
+        }
     }
 </style>

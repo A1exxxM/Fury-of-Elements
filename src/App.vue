@@ -1,5 +1,5 @@
 <template>
-	<elems-navbar/>
+	<elems-navbar v-if="$store.state.navbar"/>
 	<router-view>
 		
 	</router-view>
