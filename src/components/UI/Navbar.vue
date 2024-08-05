@@ -6,9 +6,9 @@
             <span class="navbar__btns-item" @click="$router.push('/types')">Стихии</span>
             <span class="navbar__btns-item" @click="$router.push('/classes')">Классы</span>
             <span class="navbar__btns-item" @click="$router.push('/insights')">Озарения</span>
-            <span class="navbar__btns-item" @click="$router.push('/triggers')">Тригеры</span>
+            <span class="navbar__btns-item" @click="$router.push('/triggers')">Триггеры</span>
             <span class="navbar__btns-item" @click="$router.push('/skills')">Боевые умения</span>
-            <span class="navbar__btns-item">Создание персонажа</span>
+            <span class="navbar__btns-item" @click="$router.push('/character')">Персонаж</span>
         </div>
     </nav>
 </template>

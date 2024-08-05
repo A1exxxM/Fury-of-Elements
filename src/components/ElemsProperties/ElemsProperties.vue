@@ -23,10 +23,22 @@ export default {
             font-size: 50px;
         }
         &-wrapper {
+            width: 80%;
+            margin: 0 auto;
             margin-top: 50px;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: space-between;
+        }
+        &-property {
+            width: 250px;
+            &_title {
+                font-size: 22px;
+            }
+            &_descr {
+                margin-top: 10px;
+                font-size: 17px;
+            }
         }
     }
 </style>

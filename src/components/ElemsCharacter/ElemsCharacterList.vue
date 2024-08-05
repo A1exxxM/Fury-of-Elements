@@ -3,10 +3,11 @@
     <header class="charlist__header">
         <div class="charlist__header-title">Fury of Elements</div>
         <div class="charlist__header-info">
-            <div class="charlist__header-info_name">Имя</div>
-            <div class="charlist__header-info_class">Класс</div>
+            <div class="charlist__header-info_name">{{$store.state.character.name}}</div>
+            <div class="charlist__header-info_class">{{$store.state.character.class}}</div>
             <div class="charlist__header-info_race">Раса</div>
             <div class="charlist__header-info_level">Уровень <span>1</span></div>
+            <div class="charlist__header-info_subclass">{{$store.state.character.subclass}}</div>
         </div>
     </header>
     <div class="charlist__main">
@@ -14,18 +15,11 @@
             <div class="charlist__triggers">
                 <div class="charlist__triggers-title">Триггеры</div>
                 <ul class="charlist__triggers-items">
-                    <li class="charlist__triggers-item">
-                        <div class="charlist__triggers-item_title">Название Триггера</div>
-                        <div class="charlist__triggers-item_descr">Описание Триггера</div>
+                    <li class="charlist__triggers-item" :key="item" v-for="item in $store.state.character.triggers">
+                        <div class="charlist__triggers-item_title">{{item.title}}</div>
+                        <div class="charlist__triggers-item_descr">{{item.descr}}</div>
                     </li>
-                    <li class="charlist__triggers-item">
-                        <div class="charlist__triggers-item_title">Название Триггера</div>
-                        <div class="charlist__triggers-item_descr">Описание Триггера</div>
-                    </li>
-                    <li class="charlist__triggers-item">
-                        <div class="charlist__triggers-item_title">Название Триггера</div>
-                        <div class="charlist__triggers-item_descr">Описание Триггера</div>
-                    </li>
+                    
                 </ul>
             </div>
             <div class="charlist__spells">
@@ -68,22 +62,18 @@
                 </div>
                 <div class="charlist__list-item">
                     <div class="charlist__list-item_title">Скорость</div>
-                    <div class="charlist__list-item_counter"><span class="charlist__block">10</span></div>
+                    <div class="charlist__list-item_counter"><span class="charlist__block">{{ $store.state.character.armor.speed }}</span></div>
                 </div>
             </div>
-            <div class="charlist__subclass">
-                <div class="charlist__subclass-title">Подклассы</div>
-                <div class="charlist__subclass-wrapper charlist__elem">
-                    <div class="charlist__list-item">
-                        <div class="charlist__list-item_title">Подкласс</div>
+            <div class="charlist__buffs">
+                <div class="charlist__buffs-title">Показатели</div>
+                <div class="charlist__buffs-wrapper charlist__elem">
+                    <div class="charlist__list-item charlist__list-item_big">
+                        <div class="charlist__list-item_title">Щит</div>
                         <div class="charlist__list-item_counter"><span class="charlist__block"></span></div>
                     </div>
-                    <div class="charlist__list-item">
-                        <div class="charlist__list-item_title">Подкласс</div>
-                        <div class="charlist__list-item_counter"><span class="charlist__block"></span></div>
-                    </div>
-                    <div class="charlist__list-item">
-                        <div class="charlist__list-item_title">Подкласс</div>
+                    <div class="charlist__list-item charlist__list-item_big">
+                        <div class="charlist__list-item_title">Доп. урон</div>
                         <div class="charlist__list-item_counter"><span class="charlist__block"></span></div>
                     </div>
                 </div>
@@ -93,7 +83,7 @@
                 <div class="charlist__defense-wrapper charlist__elem">
                     <div class="charlist__list-item charlist__list-item_big">
                         <div class="charlist__list-item_title">Стихийная Защита</div>
-                        <div class="charlist__list-item_counter"><span class="charlist__block">10</span></div>
+                        <div class="charlist__list-item_counter"><span class="charlist__block">{{ $store.state.character.armor.resist }}</span></div>
                     </div>
                     <div class="charlist__list-item charlist__list-item_big">
                         <div class="charlist__list-item_title">Текущее здоровье</div>
@@ -103,30 +93,30 @@
                 </div>
             </div>
             <div class="charlist__insight">
-                <div class="charlist__insight-title">Название озарения</div>
-                <div class="charlist__insight-descr">Описание озарения</div>
+                <div class="charlist__insight-title">{{ $store.state.character.insight.name }}</div>
+                <div class="charlist__insight-descr">{{ $store.state.character.insight.descr }}</div>
             </div>
             <div class="charlist__skill">
-                <div class="charlist__skill-title">Название боевого умения</div>
-                <div class="charlist__skill-descr">Описание боевого умения</div>
+                <div class="charlist__skill-title">{{ $store.state.character.skill.name }}</div>
+                <div class="charlist__skill-descr">{{ $store.state.character.skill.descr }}</div>
             </div>
             <div class="charlist__combat">
                 <div class="charlist__combat-weapon">
                     <div class="charlist__combat-weapon_title">Оружие</div>
                     <div class="charlist__combat-weapon_item">
-                        <div class="charlist__combat-weapon_item-name">Секира</div>
-                        <div class="charlist__combat-weapon_item-value">2d6 + 4</div>
+                        <div class="charlist__combat-weapon_item-name">{{$store.state.character.weapons.class.name}}</div>
+                        <div class="charlist__combat-weapon_item-value">{{$store.state.character.weapons.class.value}}</div>
                     </div>
                     <div class="charlist__combat-weapon_item">
-                        <div class="charlist__combat-weapon_item-name">Секира</div>
-                        <div class="charlist__combat-weapon_item-value">2d6 + 4</div>
+                        <div class="charlist__combat-weapon_item-name">{{$store.state.character.weapons.base.name}}</div>
+                        <div class="charlist__combat-weapon_item-value">{{$store.state.character.weapons.base.value}}</div>
                     </div>
                 </div>
                 <div class="charlist__combat-equip">
                     <div class="charlist__combat-equip_title">Снаряжение</div>
                     <div class="charlist__combat-equip_item">
                         <div class="charlist__combat-equip_item-name">Стартовый набор</div>
-                        <div class="charlist__combat-equip_item-value">Название набора</div>
+                        <div class="charlist__combat-equip_item-value">{{$store.state.character.equip}}</div>
                     </div>
                     <div class="charlist__combat-equip_item">
                         <div class="charlist__combat-equip_item-name">Золото</div>
@@ -157,11 +147,10 @@
 <style lang="scss">
     .charlist {
         padding: 50px 25px;
-        background-color: #fff;
         width: 21cm;
         height: 29.6cm;
         margin: 0 auto;
-        
+        background-color: #fff;
         &__header {
             min-height: 150px;
             display: flex;
@@ -173,7 +162,7 @@
             &-info {
                 display: flex;
                 align-items: center;
-                min-width: 250px;
+                min-width: 300px;
                 justify-content: space-between;
                 font-size: 20px;
             }
@@ -185,6 +174,7 @@
             margin-top: 50px;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
+            z-index: 1;
         }
         &__wrapper {
             grid-column: 2/4;
@@ -273,7 +263,7 @@
                 }
             }
         }
-        &__status,&__subclass,&__defense,&__insight {
+        &__status,&__buffs,&__defense,&__insight {
             border-radius: 10px;
             border: 2px solid black;
             width: 240px;
@@ -282,7 +272,7 @@
         &__defense,&__insight {
             margin-top: 20px;
         }
-        &__subclass {
+        &__buffs {
             &-title {
                 margin-top: 10px;
                 text-align: center;

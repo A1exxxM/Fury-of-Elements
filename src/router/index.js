@@ -9,6 +9,7 @@ import ElemsTriggersPage from '@/components/ElemsTriggers/ElemsTriggersPage.vue'
 import ElemsClassesItem from '@/components/ElemsClasses/ElemsClassesItem.vue';
 import ElemsTypesItem from '@/components/ElemsTypes/ElemsTypesItem.vue';
 import ElemsCharacter from '@/components/ElemsCharacter/ElemsCharacter.vue';
+import ElemsCharacterCreate from '@/components/ElemsCharacter/ElemsCharacterCreate.vue';
 
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
@@ -50,9 +51,13 @@ const router = createRouter({
 			component: ElemsTypesItem
 		},
 		{
-			path: '/charlist',
+			path: '/character',
 			component: ElemsCharacter
-		}
+		},
+		{
+			path: '/character/create',
+			component: ElemsCharacterCreate
+		},
 	]
 })
 
