@@ -23,7 +23,7 @@
                 </ul>
             </div>
             <div class="charlist__spells">
-                <div class="charlist__spells-title">Ячейки заклинаний</div>
+                <div class="charlist__spells-title">Заряды стихий</div>
                 <div class="charlist__spells-items">
                     <div class="charlist__spells-item">
                         <div class="charlist__spells-item_level">Уровень 1</div>

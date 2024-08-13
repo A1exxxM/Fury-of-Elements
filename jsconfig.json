@@ -3,7 +3,8 @@
   "javascript.suggest.paths": false,
   "compilerOptions": {
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      
     }
   },
   "exclude": ["node_modules", "dist"]

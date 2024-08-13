@@ -33,7 +33,7 @@ export default {
 		margin: 0 auto;
 	}
 	section {
-		min-height: 900px;
+		padding-bottom: 100px;
 		text-align: center;
 	}
 	ul {

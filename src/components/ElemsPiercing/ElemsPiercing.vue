@@ -1,6 +1,6 @@
 <template>
   <section class="elems__piercing container">
-    <h2 class="elems__piercing-title">Система Пробивания</h2>
+    <page-title>Система пробивания</page-title>
     <div class="elems__piercing-descr">
 		Стихийная защита - характеристика, отвечающая за вашу устойчивость к урону<br><br>
 		В начале вашего хода вы совершаете бросок 1d20 против цели, которую готовитесь атаковать.<br>
@@ -20,11 +20,9 @@ export default {
 
 <style lang="scss" scoped>
 	.elems__piercing {
-		&-title {
-			font-size: 50px;
-		}
+		
 		&-descr {
-			font-size: 30px;
+			font-size: 27px;
 			line-height: 45px;
 		}
 	}

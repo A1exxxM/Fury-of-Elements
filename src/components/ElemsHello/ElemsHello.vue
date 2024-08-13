@@ -16,7 +16,7 @@ export default {
     .elems__intro {
         padding-top: 200px;
         color: #fff;
-        height: calc(100vh - 200px);
+        height: 100vh;
         &-title {
             font-size: 100px;
         }

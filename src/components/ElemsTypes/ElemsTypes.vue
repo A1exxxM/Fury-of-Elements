@@ -1,10 +1,10 @@
 <template>
     <section class="elems__types container">
-        <h2 class="elems__types-title">Стихии</h2>
-        <div class="elems__types-descr">Описание системы стихий</div>
+        <page-title>Стихии</page-title>
+        <subtitle-vue>Описание системы стихий</subtitle-vue>
         <ul class="elems__types-items">
             <li class="elems__types-items_item" :key="item" v-for="item in $store.state.elements">
-                <img class="elems__types-items_img" :src="item.img" :alt="item.title">
+                <img class="elems__types-items_img" src="@/assets/img/elements/blood.jpg" :alt="item.title">
                 <div class="elems__types-items_title">{{item.title}}</div>
             </li>
         </ul>
@@ -14,16 +14,17 @@
 
 <script>
 export default {
-    
+    mounted() {
+        const items = document.querySelectorAll('.elems__types-items_img');
+        items.forEach((item,i) => {
+            item.setAttribute('src', `dist/assets/img/elements/${this.$store.state.elements[i].path}.jpg`)
+        });
+    }
 }
 </script>
 
 <style lang="scss" scoped>
     .elems__types {
-        padding: 100px 0;
-        &-title {
-            font-size: 50px;
-        }
         &-items {
             display: flex;
             align-items: center;

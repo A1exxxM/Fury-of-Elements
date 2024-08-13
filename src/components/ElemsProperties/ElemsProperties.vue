@@ -1,7 +1,7 @@
 <template>
   <section class="elems__properties container">
-    <h2 class="elems__properties-title">Озарения</h2>
-    <div class="elems__properties-descr">{{ $store.state.insights.descr }}</div>
+    <page-title>Озарения</page-title>
+    <subtitle-vue>{{ $store.state.insights.descr }}</subtitle-vue>
     <div class="elems__properties-wrapper">
         <div class="elems__properties-property" :key="item" v-for="item in $store.state.insights.items">
             <div class="elems__properties-property_title">{{ item.title }}</div>
@@ -18,10 +18,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .elems__properties {
-        &-title {
-            font-size: 50px;
-        }
+    .elems__properties { 
         &-wrapper {
             width: 80%;
             margin: 0 auto;
@@ -31,13 +28,20 @@ export default {
             justify-content: space-between;
         }
         &-property {
-            width: 250px;
+            width: 300px;
             &_title {
-                font-size: 22px;
+                font-size: 25px;
             }
             &_descr {
-                margin-top: 10px;
+                margin-top: 20px;
                 font-size: 17px;
+                background-color: #fff;
+                padding: 10px;
+                height: 150px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 10px;
             }
         }
     }

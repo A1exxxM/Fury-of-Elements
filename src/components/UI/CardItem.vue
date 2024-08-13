@@ -32,6 +32,7 @@ export default {
         &_descr {
             font-size: 20px;
             padding: 15px;
+            margin-top: 10px;
         }
     }
 </style>

@@ -5,10 +5,10 @@
     <ul class="cards">
         <card-item :key='item' v-for="item in $store.state.triggers.items[$store.state.currentFilter]">
             <template v-slot:card-item_title>
-                <span>{{item.title}}</span>
+                {{item.title}}
             </template>
             <template v-slot:card-item_descr>
-                <span>{{item.descr}}</span>
+                {{item.descr}}
             </template>
         </card-item>
     </ul>

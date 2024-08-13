@@ -1,7 +1,7 @@
 <template>
     <section class="elems__triggers container">
-        <h2 class="elems__triggers-title">Триггеры</h2>
-        <div class="elems__triggers-descr">{{ $store.state.triggers.descr }}</div>
+        <page-title>Триггеры</page-title>
+        <subtitle-vue>{{ $store.state.triggers.descr }}</subtitle-vue>
         <card-item class="elems__triggers-preview">
             <template v-slot:card-item_title>
                 <span>{{$store.state.triggers.items.first[0].title}}</span>
@@ -21,9 +21,6 @@ export default {
 
 <style lang="scss">
 .elems__triggers {
-    &-title {
-        font-size: 50px;
-    }
     &-preview {
         margin-top: 100px;
     }

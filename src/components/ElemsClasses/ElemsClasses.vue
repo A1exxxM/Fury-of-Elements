@@ -1,7 +1,7 @@
 <template>
-    <section class="elems__classes">
-      <h2 class="elems__classes-title">Классы</h2>
-      <div class="elems__classes-descr">Описание общей концепции классов</div>
+    <section class="elems__classes container">
+        <page-title>Классы</page-title>
+      <subtitle-vue>Описание общей концепции классов</subtitle-vue>
       <ul class="elems__classes-items">
         <li class="elems__classes-items_item" :key="item" v-for="item in $store.state.classes">
                 <img class="elems__classes-items_img" :src="item.img" :alt="item.title">
@@ -18,10 +18,7 @@
 </script>
   
 <style lang="scss" scoped>
-    .elems__classes {
-        &-title {
-            font-size: 50px;
-        }
+    .elems__classes { 
         &-items {
             display: flex;
             align-items: center;
