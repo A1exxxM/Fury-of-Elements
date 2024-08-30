@@ -51,6 +51,7 @@ export default {
 		&__descr {
 			padding: 50px;
 			width: 50%;
+			font-size: 20px;
 		}
 		&__page {
 			margin-top: 50px;
@@ -58,6 +59,7 @@ export default {
 		}
 		&__name {
 			margin-top: 20px;
+			font-size: 20px;
 		}
 		&__list {
 			display: flex;

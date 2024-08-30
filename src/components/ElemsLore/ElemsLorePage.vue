@@ -1,7 +1,7 @@
 <template>
     <section class="lore page container">
         <page-title>Лор</page-title>
-        <div class="lore__preview">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum inventore beatae dolor voluptas temporibus delectus, natus minima libero eveniet illo dignissimos commodi asperiores! Soluta, quod impedit nesciunt tenetur esse itaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam eligendi quae provident cum nemo necessitatibus. Qui cupiditate facere praesentium eligendi, architecto illum aspernatur provident recusandae quasi. Vero obcaecati expedita mollitia.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum inventore beatae dolor voluptas temporibus delectus, natus minima libero eveniet illo dignissimos commodi asperiores! Soluta, quod impedit nesciunt tenetur esse itaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam eligendi quae provident cum nemo necessitatibus. Qui cupiditate facere praesentium eligendi, architecto illum aspernatur provident recusandae quasi. Vero obcaecati expedita mollitia.</div>
+        <div class="lore__preview">Как и эта настольная ролевая игра - мир игры только начинает своё развитие. Ниже будут описаны основные фрагменты в истории Дайтона, именно так называется наш мир. Но помните: это лишь описание игрового мира, вы вольны сами писать свои невероятные истории. Возможно в будущем они будут расширять общий лор Дайтона, как настоящие легенды. Если у вас есть свои идеи для миров - смело развивайте их. Возможно вы захотите создать новый материк в рамках мира Дайтон со своими законами и правилами, а может даже и поменять стилистику под времена Постапокалипсиса современности. Я считаю, что систему FoE можно адаптировать под различные эпохи и стилистики, в планах создать необходимый набор инструментов для ДМа под реализацию этих задач. Также в планах создать библиотеку с ваншотами и компаниями, которые вы сможете адаптировать и свободно использовать в своих партиях</div>
         <div class="lore__world" :key="item" v-for="item in $store.state.lore.world">
             <h3 class="lore__world-title">{{ item.title }}</h3>
             <div class="lore__world-wrapper">
@@ -60,8 +60,13 @@ export default {
             }
         }
         &__countries {
+            margin-top: 100px;
             &-img {
                 width: 80%;
+            }
+            &-descr {
+                font-size: 20px;
+                margin-top: 50px;
             }
         }
     }

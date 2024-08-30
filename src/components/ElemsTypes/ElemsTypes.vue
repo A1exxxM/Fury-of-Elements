@@ -1,7 +1,7 @@
 <template>
     <section class="elems__types container">
         <page-title>Стихии</page-title>
-        <subtitle-vue>Описание системы стихий</subtitle-vue>
+        <subtitle-vue>Ключевая особенность FoE: стихии и их взаимодействия между собой.<br> Ваш персонаж будет обладать способностью накладывать стихийные метки, а также при повышении уровня освоит подкасс, принадлежащий к одной из стихий, представленных ниже</subtitle-vue>
         <ul class="elems__types-items">
             <li class="elems__types-items_item" :key="item" v-for="item in $store.state.elements">
                 <img class="elems__types-items_img" src="@/assets/img/elements/blood.jpg" :alt="item.title">

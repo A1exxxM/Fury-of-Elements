@@ -2,9 +2,10 @@
     <section class="character page container">
         <page-title>Персонаж</page-title>
         <rules-list>
-            <rules-item>Данный функционал ещё находится в разработке, но автор захватил для вас костыль из дома</rules-item>
+            <rules-item>Данный функционал ещё находится в разработке</rules-item>
             <rules-item>Переходите к созданию персонажа после ознакомления со всеми механиками</rules-item>
-            <rules-item>Используйте специальный id для поиска персонажа (work in progress)</rules-item>
+            <rules-item>До 7 сентября осталяю за собой право на правки баланса</rules-item>
+            <rules-item>Используйте специальный id для поиска персонажа (появится позже)</rules-item>
         </rules-list>
         <div class="character__wrapper">
             <div>

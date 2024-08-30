@@ -5,7 +5,6 @@
         <div class="charlist__header-info">
             <div class="charlist__header-info_name">{{$store.state.character.name}}</div>
             <div class="charlist__header-info_class">{{$store.state.character.class}}</div>
-            <div class="charlist__header-info_race">Раса</div>
             <div class="charlist__header-info_level">Уровень <span>1</span></div>
             <div class="charlist__header-info_subclass">{{$store.state.character.subclass}}</div>
         </div>
@@ -13,39 +12,25 @@
     <div class="charlist__main">
         <div class="charlist__elems">
             <div class="charlist__triggers">
-                <div class="charlist__triggers-title">Триггеры</div>
+                <div class="charlist__triggers-title">Триггеры:</div>
                 <ul class="charlist__triggers-items">
                     <li class="charlist__triggers-item" :key="item" v-for="item in $store.state.character.triggers">
                         <div class="charlist__triggers-item_title">{{item.title}}</div>
-                        <div class="charlist__triggers-item_descr">{{item.descr}}</div>
                     </li>
                     
                 </ul>
             </div>
             <div class="charlist__spells">
-                <div class="charlist__spells-title">Заряды стихий</div>
+                <div class="charlist__spells-title">Заряды стихий:</div>
                 <div class="charlist__spells-items">
                     <div class="charlist__spells-item">
                         <div class="charlist__spells-item_level">Уровень 1</div>
                         <div class="charlist__spells-item_counter">
                             <span class="charlist__block charlist__block-small"></span>
                             <span class="charlist__spells-item_divider">/</span>
-                            <span class="charlist__spells-item_amount"> 3</span></div>
-                    </div>
-                    <div class="charlist__spells-item">
-                        <div class="charlist__spells-item_level">Уровень 2</div>
-                        <div class="charlist__spells-item_counter">
-                            <span class="charlist__block charlist__block-small"></span>
-                            <span class="charlist__spells-item_divider">/</span>
-                            <span class="charlist__spells-item_amount"> 2</span></div>
-                    </div>
-                    <div class="charlist__spells-item">
-                        <div class="charlist__spells-item_level">Уровень 3</div>
-                        <div class="charlist__spells-item_counter">
-                            <span class="charlist__block charlist__block-small"></span>
-                            <span class="charlist__spells-item_divider">/</span>
                             <span class="charlist__spells-item_amount"> 1</span></div>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -54,11 +39,11 @@
             <div class="charlist__status charlist__elem">
                 <div class="charlist__list-item">
                     <div class="charlist__list-item_title">Здоровье</div>
-                    <div class="charlist__list-item_counter"><span class="charlist__block">10</span></div>
+                    <div class="charlist__list-item_counter"><span class="charlist__block"></span></div>
                 </div>
                 <div class="charlist__list-item">
                     <div class="charlist__list-item_title">Инициатива</div>
-                    <div class="charlist__list-item_counter"><span class="charlist__block">10</span></div>
+                    <div class="charlist__list-item_counter"><span class="charlist__block"></span></div>
                 </div>
                 <div class="charlist__list-item">
                     <div class="charlist__list-item_title">Скорость</div>
@@ -66,7 +51,7 @@
                 </div>
             </div>
             <div class="charlist__buffs">
-                <div class="charlist__buffs-title">Показатели</div>
+                <div class="charlist__buffs-title">Показатели:</div>
                 <div class="charlist__buffs-wrapper charlist__elem">
                     <div class="charlist__list-item charlist__list-item_big">
                         <div class="charlist__list-item_title">Щит</div>
@@ -87,7 +72,7 @@
                     </div>
                     <div class="charlist__list-item charlist__list-item_big">
                         <div class="charlist__list-item_title">Текущее здоровье</div>
-                        <div class="charlist__list-item_counter"><span class="charlist__block">10</span></div>
+                        <div class="charlist__list-item_counter"><span class="charlist__block"></span></div>
                     </div>
                     
                 </div>
@@ -217,7 +202,7 @@
                 height: 100px;
                 margin-top: 10px;
                 &_title {
-                    font-size: 18px;
+                    font-size: 21px;
                 }
                 &_descr {
                     margin-top: 5px;

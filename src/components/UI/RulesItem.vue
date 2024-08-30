@@ -14,5 +14,6 @@ export default {
     .rules__item {
         width: fit-content;
         margin-top: 10px;
+        font-size: 20px;
     }
 </style>

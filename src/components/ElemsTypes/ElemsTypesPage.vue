@@ -1,12 +1,11 @@
 <template>
     <section class="types container page">
-        <h2 class="types__title">Механика стихий</h2>
-        <div class="types__descr">Краткое описание работы стихий</div>
-        <ul class="types__rules">
-            <li class="types__rules-item" :key="rule" v-for="rule in $store.state.typesRules">{{rule}}</li>
-            
-        </ul>
-        <h3 class="types__subtitle">Стихии Мира</h3>
+        <h2 class="types__title">Стихии</h2>
+        <subtitle-vue>Ключевая механика Fury of Elements</subtitle-vue>
+        <rules-list>
+            <rules-item :key="rule" v-for="rule in $store.state.typesRules">{{ rule }}</rules-item>
+        </rules-list>
+        <h3 class="types__subtitle">Открытые стихии:</h3>
         <ul class="types__preview">
             <li class="types__preview-item" :key="element" v-for="element in $store.state.elements" 
             @click="selectCurrentType(element)">
@@ -14,7 +13,6 @@
                 <div class="types__preview-item_img">
                     <img :src="element.img" alt="Иконка стихии">
                 </div>
-                <div class="types__preview-item_descr">{{ element.descr }}</div>
             </li>
         </ul>
         
@@ -37,20 +35,6 @@ export default {
         &__title {
             font-size: 45px;
         }
-        &__descr {
-            font-size: 25px;
-        }
-        &__rules {
-            margin-top: 25px;
-            background-color: #fff;
-            border: 2px solid black;
-            padding: 25px;
-            border-radius: 10px;
-            &-item {
-                width: fit-content;
-                margin-top: 10px;
-            }
-        }
         &__subtitle {
             font-size: 35px;
         }
@@ -66,17 +50,21 @@ export default {
                 display: flex;
                 align-items: center;
                 flex-direction: column;
-                border: 2px solid black;
-                border-radius: 10px;
                 list-style-type: none;
                 font-size: 20px;
                 cursor: pointer;
                 &_img {
-                    width: 100px;
-                    height: 100px;
+                    margin-top: 30px;
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 15%;
+                    overflow: hidden;
                     img {
                         width: 100%;
                     }
+                }
+                &_title {
+                    font-size: 25px;
                 }
             }
         }

@@ -1,7 +1,7 @@
 <template>
     <section class="triggers page container">
         <page-title>Триггеры</page-title>
-        <div class="triggers__descr">{{$store.state.triggers.descr}}</div>
+        <subtitle-vue>{{$store.state.triggers.descr}}</subtitle-vue>
         <rules-list>
             <rules-item :key="rule" v-for="rule in $store.state.triggers.rules">{{ rule }}</rules-item>
         </rules-list>

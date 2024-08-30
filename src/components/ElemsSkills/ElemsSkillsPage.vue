@@ -1,7 +1,7 @@
 <template>
     <section class="skills page container">
         <page-title>Боевые умения</page-title>
-        <div class="skills__descr">{{$store.state.skills.descr}}</div>
+        <subtitle-vue>{{$store.state.skills.descr}}</subtitle-vue>
         <rules-list>
             <rules-item :key='rule' v-for="rule in $store.state.skills.rules">{{ rule }}</rules-item>
         </rules-list>

@@ -1,7 +1,7 @@
 <template>
     <section class="properties container page">
         <page-title>Озарения</page-title>
-        <div class="properties__descr">{{$store.state.insights.descr}}</div>
+        <subtitle-vue>{{$store.state.insights.descr}}</subtitle-vue>
         <rules-list>
             <rules-item :key="item" v-for="item in $store.state.insightsRules">{{ item }}</rules-item>
         </rules-list>
