@@ -345,4 +345,26 @@ export default {
         }
         
     }
+    @media (max-width: 1400px) {
+        .creation__insight {
+            min-height: 350px;
+        }
+        .creation__weapons {
+            &-class {
+                min-width: 300px;
+            }
+            &-base {
+                min-width: 300px;
+            }
+            &-item {
+                margin: 0 10px;
+            }
+        }
+        .creation__armor {
+            width: 100%;
+        }
+        .creation__equip {
+            width: 100%;
+        }
+    }
 </style>

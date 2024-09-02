@@ -27,4 +27,31 @@ export default {
             font-size: 30px;
         }
     }
+    @media (max-width: 992px) {
+        .elems__intro {
+            &-title {
+                font-size: 70px;
+            }
+            &-subtitle {
+                font-size: 30px;
+            }
+            &-descr {
+                font-size: 25px;
+            }
+        }
+    }
+    @media (max-width: 576px) {
+        .elems__intro {
+            padding-top: 100px;
+            &-title {
+                font-size: 60px;
+            }
+            &-subtitle {
+                font-size: 25px;
+            }
+            &-descr {
+                font-size: 25px;
+            }
+        }
+    }
 </style>

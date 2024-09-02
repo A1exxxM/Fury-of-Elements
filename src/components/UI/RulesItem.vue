@@ -12,7 +12,8 @@ export default {
 
 <style lang="scss">
     .rules__item {
-        width: fit-content;
+        width: 100%;
+        text-align: left;
         margin-top: 10px;
         font-size: 20px;
     }

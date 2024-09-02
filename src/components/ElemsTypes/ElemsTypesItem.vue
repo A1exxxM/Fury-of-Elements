@@ -15,7 +15,8 @@
             <h3 class="type__combinations-title">Комбинации</h3>
             <ul class="type__combinations-btns">
                 
-                <big-button :key="combination" 
+                <big-button :key="combination"
+                :class="{'button__active' : combination.id == $store.state.currentCombination}" 
                 v-for="combination in $store.state.elements[$store.state.currentType].combination"
                 @click="changeActiveCombination(combination)"
                 >
@@ -121,5 +122,61 @@ export default {
                 }
             }
         }
+    }
+    @media (max-width: 992px) {
+        .type__combinations-btns {
+            li {
+                width: 150px;
+            }
+        }
+    }
+    @media (max-width: 768px) {
+        .type {
+            &__lore {
+                flex-direction: column-reverse;
+                &-history {
+                    width: 100%;
+                }
+            }
+            &__combinations {
+                &-result {
+                    width: 100%;
+                }
+                &-btns {
+                    li {
+                        width: 125px;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 576px) {
+        .type {
+            &__lore {
+                &-history {
+                    padding: 0;
+                    margin-bottom: 20px;
+                }
+                &-preview {
+                    width: 100%;
+                    &_img {
+                        width: 100%;
+                        height: fit-content;
+                    }
+                }
+            }
+            &__combinations {
+                &-btns {
+                    flex-direction: column;
+                    width: 100%;
+                    li {
+                        margin-top: 10px;
+                        width: 100%;
+                    }
+                }
+            }
+            
+        }
+        
     }
 </style>

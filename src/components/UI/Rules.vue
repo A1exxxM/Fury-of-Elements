@@ -18,4 +18,11 @@ export default {
         padding: 25px;
         border-radius: 10px;
     }
+    @media (max-width:768px) {
+        .rules {
+            padding-right: 10px;
+
+        }
+        
+    }
 </style>

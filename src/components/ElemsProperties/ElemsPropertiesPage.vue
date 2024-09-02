@@ -72,4 +72,36 @@ export default {
             }
         }
     }
+    @media (max-width: 992px) {
+        .properties {
+            &__wrapper {
+                width: 100%;
+            }
+        }
+    }
+    @media (max-width: 768px) {
+        .properties {
+            &__types {
+                width: 30%;
+            }
+            &__preview {
+                width: 70%;
+            }
+        }
+    }
+    @media (max-width: 576px) {
+        .properties {
+            
+            &__types {
+                &-item {
+                    font-size: 15px;
+                }
+            }
+            &__preview {
+                font-size: 17px;
+                padding: 5px;
+            }
+        }
+    }
+
 </style>

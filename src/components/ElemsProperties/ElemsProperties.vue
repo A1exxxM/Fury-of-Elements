@@ -45,4 +45,24 @@ export default {
             }
         }
     }
+    @media (max-width: 1400px) {
+        .elems__properties {
+            &-wrapper {
+                align-items: center;
+                flex-direction: column;
+            }
+            &-property {
+                width: 100%;
+                margin-top: 25px;
+            }
+        }
+    }
+    @media (max-width: 576px) {
+        .elems__properties {
+            &-wrapper {
+                width: 100%;
+            }
+        }
+        
+    }
 </style>

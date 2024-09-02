@@ -1,6 +1,6 @@
 <template>
     <div class="filters">
-        <big-button @click="changeCurrentFilter(filter)" :key="filter" v-for="filter in $store.state.triggers.filters">{{ filter.title }}</big-button>
+        <big-button @click="changeCurrentFilter(filter)" :class="{'button__active' : filter.filter == $store.state.currentFilter}" :key="filter" v-for="filter in $store.state.triggers.filters">{{ filter.title }}</big-button>
     </div>
     <ul class="cards">
         <card-item :key='item' v-for="item in $store.state.triggers.items[$store.state.currentFilter]">
@@ -35,5 +35,25 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+@media (max-width: 1400px) {
+    .filters {
+        width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .filters {
+        flex-wrap: wrap;
+        li {
+            margin-top: 10px;
+        }
+    }
+}
+@media (max-width: 576px) {
+    .filters {
+        li {
+            width: 100%;
+        }
+    }
 }
 </style>

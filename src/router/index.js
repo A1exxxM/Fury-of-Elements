@@ -12,7 +12,7 @@ import ElemsCharacter from '@/components/ElemsCharacter/ElemsCharacter.vue';
 import ElemsCharacterCreate from '@/components/ElemsCharacter/ElemsCharacterCreate.vue';
 
 const router = createRouter({
-	history: createWebHistory(import.meta.env.BASE_URL),
+	history: createWebHistory('/Fury-of-Elements/'),
 	routes: [
 		{
 			path: '/',

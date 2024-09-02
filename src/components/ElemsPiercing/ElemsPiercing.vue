@@ -25,4 +25,20 @@ export default {
 			line-height: 45px;
 		}
 	}
+	@media (max-width: 992px) {
+		.elems__piercing {
+			&-descr {
+				font-size: 23px;
+				line-height: 35px;
+			}
+		}
+	}
+	@media (max-width: 576px) {
+		.elems__piercing {
+			&-descr {
+				font-size: 20px;
+				line-height: 30px;
+			}
+		}
+	}
 </style>

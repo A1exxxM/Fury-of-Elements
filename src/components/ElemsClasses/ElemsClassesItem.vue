@@ -5,7 +5,7 @@
         <div class="class__ability">Особенность класса: <br> <span>{{$store.state.classes[$store.state.currentClass].ability}}</span></div>
         <div class="class__properties">
             <div class="class__properties-type">
-                <big-button :key="property" v-for="property in $store.state.properties" @click="changeCurrentClassType(property)">{{property.name}}</big-button>
+                <big-button :class="{'button__active': property.value == $store.state.currentClassType}" :key="property" v-for="property in $store.state.properties" @click="changeCurrentClassType(property)">{{property.name}}</big-button>
             </div>
             <div class="class__properties-preview">
                 <div class="class__properties-preview_item" 
@@ -79,6 +79,40 @@ export default {
                 }
             }
         }
-        
+    }
+    @media (max-width: 992px) {
+        .class__properties-type {
+            li {
+                width: 150px;
+            }
+        }
+    }
+    @media (max-width: 768px) {
+        .class {
+            &__properties {
+                &-type {
+                    flex-direction: column;
+                    width: 100%;
+                    li {
+                        margin: 0;
+                        margin-top: 15px;
+                        width: 100%;
+                    }
+                }
+            }
+            
+        }
+    }
+    @media (max-width: 576px) {
+        .class {
+            &__properties {
+                &-preview {
+                    width: 100%;
+                    &_item {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
     }
 </style>

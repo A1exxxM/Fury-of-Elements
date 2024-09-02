@@ -69,4 +69,38 @@ export default {
             }
         }
     }
+    @media (max-width:1400px) {
+        .types {
+            &__preview {
+                &-item {
+                    width: 200px;
+                    &_img {
+                        width: 100%;
+                        height: fit-content;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 768px) {
+        .types {
+            &__preview {
+                flex-wrap: wrap;
+                &-item {
+                    width: 230px;
+                }
+            }
+        }
+    }
+    @media (max-width: 576px) {
+        .types {
+            &__preview {
+                justify-content: center;
+                &-item {
+                    width: 80%;
+
+                }
+            }
+        }
+    }
 </style>

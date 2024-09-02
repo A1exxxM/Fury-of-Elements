@@ -43,8 +43,6 @@ export default {
                 justify-content: space-between;
                 width: 90%;
                 margin: 0 auto;
-                
-            
             }
             &-map {
                 width: 500px;
@@ -67,6 +65,33 @@ export default {
             &-descr {
                 font-size: 20px;
                 margin-top: 50px;
+            }
+        }
+    }
+    @media (max-width: 1400px) {
+        .lore {
+            &__world {
+                &-wrapper {
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+    @media (max-width: 768px) {
+        .lore {
+            &__countries {
+                &-img {
+                    width: 100%;
+                }
+            }
+            &__world {
+                &-wrapper {
+                    width: 100%;
+                }
+                &-map {
+                    width: 100%;
+                    height: fit-content;
+                }
             }
         }
     }

@@ -31,4 +31,32 @@ export default {
           padding: 0 20px;
         }
     }
+    @media (max-width: 1400px) {
+		.elems__lore {
+			&-wrapper {
+				flex-direction: column;
+			}
+			&-img {
+				width: 50%;
+
+			}
+			&-descr {
+				font-size: 23px;
+			}
+		}
+    }
+	@media (max-width: 992px) {
+		.elems__lore {
+			&-descr {
+				font-size: 20px;
+			}
+		}
+	}
+	@media (max-width: 768px) {
+		.elems__lore {
+			&-img {
+				width: 100%;
+			}
+		}
+	}
 </style>

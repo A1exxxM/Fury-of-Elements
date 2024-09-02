@@ -21,5 +21,11 @@ export default {
         background-color: #fff;
         margin: 0 10px;
         cursor: pointer;
+        color: #000;
+        &__active {
+            background-color: #000;
+            border: 2px solid #fff;
+            color: #fff;
+        }
     }
 </style>
