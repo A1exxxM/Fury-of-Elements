@@ -1,5 +1,5 @@
 <template>
-    <section class="types container page">
+    <section class="types container page animate__animated animate__fadeIn">
         <h2 class="types__title">Стихии</h2>
         <subtitle-vue>Ключевая механика Fury of Elements</subtitle-vue>
         <rules-list>
@@ -7,7 +7,7 @@
         </rules-list>
         <h3 class="types__subtitle">Открытые стихии:</h3>
         <ul class="types__preview">
-            <li class="types__preview-item" :key="element" v-for="element in $store.state.elements" 
+            <li class="types__preview-item" :key="element" v-for="element in $store.state.elements" @mouseenter="setHoverColor(element)" @mouseleave="deleteHoverColor"
             @click="selectCurrentType(element)">
                 <div class="types__preview-item_title">{{ element.title }}</div>
                 <div class="types__preview-item_img">
@@ -23,8 +23,14 @@
 export default {
     methods: {
         selectCurrentType(element) {
-            this.$store.state.currentType = element.id;
-            this.$router.push(`/types/${element.path}`)
+            this.$store.commit('selectCurrentType', element);
+            this.$router.push(`/types/${element.path}`);
+        },
+        setHoverColor(element) {
+            this.$store.commit('setHoverColor', element);
+        },
+        deleteHoverColor() {
+            this.$store.commit('deleteHoverColor');
         }
     }
 }

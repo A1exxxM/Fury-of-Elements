@@ -1,5 +1,5 @@
 <template>
-    <section class="skills page container">
+    <section class="skills page container animate__animated animate__fadeIn">
         <page-title>Боевые умения</page-title>
         <subtitle-vue>{{$store.state.skills.descr}}</subtitle-vue>
         <rules-list>

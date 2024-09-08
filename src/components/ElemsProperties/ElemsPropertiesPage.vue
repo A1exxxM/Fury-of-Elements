@@ -1,5 +1,5 @@
 <template>
-    <section class="properties container page">
+    <section class="properties container page animate__animated animate__fadeIn">
         <page-title>Озарения</page-title>
         <subtitle-vue>{{$store.state.insights.descr}}</subtitle-vue>
         <rules-list>
@@ -8,7 +8,8 @@
         <h3 class="properties__subtitle">Виды озарений</h3>
         <div class="properties__wrapper">
             <ul class="properties__types">
-                <li class="properties__types-item" @click="changeCurrentInsight(item)" :key="item" v-for="item in $store.state.insights.items">{{ item.title }}</li>
+                <li class="properties__types-item" @click="changeCurrentInsight(item)"
+                :key="item" v-for="item in $store.state.insights.items">{{ item.title }} <span class="properties__types-item_underline" :class="{'properties__types-item_underline-active': item.id == $store.state.currentInsight}"></span></li>
             </ul>
             <div class="properties__preview">{{$store.state.insights.items[$store.state.currentInsight].descr}}</div>
         </div>
@@ -19,7 +20,7 @@
 export default {
     methods: {
         changeCurrentInsight(item) {
-            this.$store.commit('changeCurrentInsight', item)
+            this.$store.commit('changeCurrentInsight', item);
         }
     }
 }
@@ -27,9 +28,6 @@ export default {
 
 <style scoped lang="scss">
     .properties {
-        &__title {
-            font-size: 35px;
-        }
         &__subtitle {
             margin-top: 50px;
             font-size: 25px;
@@ -69,6 +67,23 @@ export default {
                 list-style-type: none;
                 font-size: 25px;
                 cursor: pointer;
+                width: 80%;
+                &_underline {
+                    display: block;
+                    width: 0%;
+                    background-color: #fff;
+                    height: 2px;
+                    margin-top: 10px;
+                    transition: 0.6s all;
+                    &-active {
+                        width: 100%;
+                    }
+                }
+                &:hover {
+                    .properties__types-item_underline {
+                        width: 100%;
+                    }
+                }
             }
         }
     }

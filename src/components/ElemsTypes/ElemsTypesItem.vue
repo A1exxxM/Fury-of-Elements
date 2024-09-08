@@ -9,23 +9,25 @@
             <div class="type__lore-history">{{ $store.state.elements[$store.state.currentType].lore }}</div>
         </div>
 
-        <div class="type__preview">{{ $store.state.elements[$store.state.currentType].descr }}</div>
+        <div class="type__preview" :style="{backgroundColor: $store.state.hoverColor}">{{ $store.state.elements[$store.state.currentType].descr }}</div>
         
         <div class="type__combinations">
             <h3 class="type__combinations-title">Комбинации</h3>
             <ul class="type__combinations-btns">
                 
                 <big-button :key="combination"
-                :class="{'button__active' : combination.id == $store.state.currentCombination}" 
+                :class="{'button__active' : combination.id == $store.state.currentCombination}"
+                :style="{backgroundColor: $store.state.hoverColor, borderColor: $store.state.currentCombinations[combination.id]}"
                 v-for="combination in $store.state.elements[$store.state.currentType].combination"
                 @click="changeActiveCombination(combination)"
                 >
-                {{ combination.title }}
+                {{ combination.title  }}
                 </big-button>
             </ul>
-            <div class="type__combinations-result">
+            <div class="type__combinations-result" :style="{backgroundColor: $store.state.hoverColor}">
                 <div class="type__combinations-result_title">{{ $store.state.elements[$store.state.currentType].combination[$store.state.currentCombination].name }}</div>
                 <div class="type__combinations-result_descr">{{ $store.state.elements[$store.state.currentType].combination[$store.state.currentCombination].descr }}</div>
+                
             </div>
         </div>
     </section>
@@ -35,10 +37,12 @@
 export default {
     methods: {
         changeActiveCombination(combination) {
-            this.$store.commit('changeActiveCombination', combination)
-        }
+            this.$store.commit('changeActiveCombination', combination);
+        },
+    },
+    unmounted() {
+        this.$store.commit('clearColors')
     }
-    
 }
 </script>
 

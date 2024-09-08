@@ -1,13 +1,12 @@
 <template>
-  <section class="classes container page">
+  <section class="classes container page animate__animated animate__fadeIn">
     <page-title>Классы</page-title>
     <div class="classes__wrapper">
       <div class="classes__info">
         <div class="classes__icon">
 			<img :src="$store.state.classes[$store.state.currentClass].img" :alt="$store.state.classes[$store.state.currentClass].title">
 		</div>
-		<div class="classes__name">{{ $store.state.classes[$store.state.currentClass].title }}</div>
-        <div class="classes__page" @click="$router.push(`/classes/${$store.state.classes[$store.state.currentClass].path}`)">Подробнее</div>
+        <big-button class="classes__page" @click="$router.push(`/classes/${$store.state.classes[$store.state.currentClass].path}`)">Подробнее</big-button>
       </div>
       <div class="classes__descr">{{ $store.state.classes[$store.state.currentClass].descr }}
       </div>
@@ -31,6 +30,9 @@ export default {
 <style scoped lang="scss">
 	.classes {
 		color: #fff;
+		&__page {
+			margin-top: 30px;
+		}
 		&__wrapper {
 			margin-top: 100px;
 			display: flex;
@@ -53,13 +55,8 @@ export default {
 			width: 50%;
 			font-size: 20px;
 		}
-		&__page {
-			margin-top: 50px;
-			cursor: pointer;
-		}
 		&__name {
 			margin-top: 20px;
-			font-size: 20px;
 		}
 		&__list {
 			display: flex;
@@ -69,6 +66,11 @@ export default {
 			margin: 0 auto;
 			margin-top: 150px;
 			
+		}
+		&__info {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
 		}
 	}
 	@media (max-width: 1400px) {

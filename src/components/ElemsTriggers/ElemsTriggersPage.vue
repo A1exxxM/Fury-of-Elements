@@ -1,5 +1,5 @@
 <template>
-    <section class="triggers page container">
+    <section class="triggers page container animate__animated animate__fadeIn">
         <page-title>Триггеры</page-title>
         <subtitle-vue>{{$store.state.triggers.descr}}</subtitle-vue>
         <rules-list>

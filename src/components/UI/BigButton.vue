@@ -22,6 +22,13 @@ export default {
         margin: 0 10px;
         cursor: pointer;
         color: #000;
+        border: 2px solid #fff;
+        transition: 0.6s all;
+        &:hover {
+            background-color: #000;
+            color: #fff;
+            
+        }
         &__active {
             background-color: #000;
             border: 2px solid #fff;

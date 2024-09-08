@@ -10,6 +10,7 @@ import ElemsClassesItem from '@/components/ElemsClasses/ElemsClassesItem.vue';
 import ElemsTypesItem from '@/components/ElemsTypes/ElemsTypesItem.vue';
 import ElemsCharacter from '@/components/ElemsCharacter/ElemsCharacter.vue';
 import ElemsCharacterCreate from '@/components/ElemsCharacter/ElemsCharacterCreate.vue';
+import ElemsCharacterItem from '@/components/ElemsCharacter/ElemsCharacterItem.vue';
 
 const router = createRouter({
 	history: createWebHistory('/Fury-of-Elements/'),
@@ -58,6 +59,10 @@ const router = createRouter({
 			path: '/character/create',
 			component: ElemsCharacterCreate
 		},
+		{
+			path: '/character/:id',
+			component: ElemsCharacterItem
+		}
 	]
 })
 

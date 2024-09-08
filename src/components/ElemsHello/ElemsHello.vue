@@ -1,5 +1,5 @@
 <template>
-    <section class="elems__intro container">
+    <section class="elems__intro container animate__animated animate__fadeIn">
         <h1 class="elems__intro-title">Fury of Elements</h1>
         <h2 class="elems__intro-subtitle">Настольная ролевая игра</h2>
         <div class="elems__intro-descr">Новая система настольных ролевых игр, основанная на опыте от партий в D&D и Lancer RPG<br><br> На этой странице кратко представлены основные механики FoE <br> <br> Рекомендую переходить к созданию персонажа после полного ознакомления</div>

@@ -92,6 +92,8 @@ import ElemsTriggersList from '@/components/ElemsTriggers/ElemsTriggersList.vue'
 import ElemsSkillsList from '@/components/ElemsSkills/ElemsSkillsList.vue';
 import html2pdf from 'html2pdf.js'
 import ElemsCharacterList from './ElemsCharacterList.vue';
+import db from '@/firebase/init';
+import { collection, addDoc, } from 'firebase/firestore';
 export default {
     components: {ElemsTriggersList,ElemsSkillsList,ElemsCharacterList},
     data() {
@@ -111,7 +113,8 @@ export default {
                     class: ''
                 },
                 armor: '',
-                equip: ''
+                equip: '',
+                id: ''
             }
     }},
     methods: {
@@ -119,6 +122,7 @@ export default {
             window.scrollTo({ top: 0, behavior: "smooth" });
             this.step++;
             if(this.step == 8) {
+                this.character.id = Math.round(Math.random() * (1000000 - 1) + 1)
                 this.$store.commit('createCharacter', this.character);
             }
         },
@@ -135,7 +139,6 @@ export default {
                 target.classList.remove('creation__triggers-items_item-active');
             } else {
                 if (this.character.triggers.length < 3) {
-                    console.log(this.character.triggers.length)
                     this.character.triggers.push(target.textContent);
                     target.classList.add('creation__triggers-items_item-active');
                 }
@@ -156,15 +159,19 @@ export default {
         setEquip(item) {
             this.character.equip = item.name
         },
-        createCharacter(newCharacter) {
-            
+        async postCharacter() {
+            const docRef = await addDoc(collection(db, 'characters'), this.$store.state.character)
+        },  
+        createCharacter() {
             const pdfElem = document.querySelector('.charlist');
             const opt = {
                 filename: 'foe-charlist.pdf',
                 html2canvas: {scale: 4},
             };
             html2pdf().set(opt).from(pdfElem).save();
+            this.postCharacter();
             }
+            
     },
     
     mounted() {

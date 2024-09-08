@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar">
+    <nav class="navbar animate__animated animate__fadeInDown" :style="{backgroundColor: $store.state.hoverColor}">
         <div class="navbar__btns container">
             <span class="navbar__btns-item" @click="$router.push('/')">Главная</span>
             <span class="navbar__btns-item" @click="$router.push('/lore')">Лор</span>
@@ -51,6 +51,7 @@ export default {
 
 <style scoped lang="scss">
     .navbar {
+        z-index: 100;
         width: 100%;
         height: 100px;
         background-color: #000;
@@ -60,6 +61,7 @@ export default {
         color: #fff;
         display: flex;
         align-items: center;
+        transition: 0.6s all;
         &__btns {
             display: flex;
             align-items: center;

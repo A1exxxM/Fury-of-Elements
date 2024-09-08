@@ -3,7 +3,7 @@
         <big-button @click="changeCurrentFilter(filter)" :class="{'button__active' : filter.filter == $store.state.currentFilter}" :key="filter" v-for="filter in $store.state.triggers.filters">{{ filter.title }}</big-button>
     </div>
     <ul class="cards">
-        <card-item :key='item' v-for="item in $store.state.triggers.items[$store.state.currentFilter]">
+        <card-item class="animate__animated animate__fadeInUp" :key='item' v-for="item in $store.state.triggers.items[$store.state.currentFilter]">
             <template v-slot:card-item_title>
                 {{item.title}}
             </template>

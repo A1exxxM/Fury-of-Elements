@@ -4,7 +4,7 @@
         <subtitle-vue>Ключевая особенность FoE: стихии и их взаимодействия между собой.<br> Ваш персонаж будет обладать способностью накладывать стихийные метки, а также при повышении уровня освоит подкасс, принадлежащий к одной из стихий, представленных ниже</subtitle-vue>
         <ul class="elems__types-items">
             <li class="elems__types-items_item" :key="item" v-for="item in $store.state.elements">
-                <img class="elems__types-items_img" src="@/assets/img/elements/blood.jpg" :alt="item.title">
+                <img class="elems__types-items_img" :src="item.img" :alt="item.title">
                 <div class="elems__types-items_title">{{item.title}}</div>
             </li>
         </ul>
@@ -14,12 +14,7 @@
 
 <script>
 export default {
-    mounted() {
-        const items = document.querySelectorAll('.elems__types-items_img');
-        items.forEach((item,i) => {
-            item.setAttribute('src', `dist/assets/img/elements/${this.$store.state.elements[i].path}.jpg`)
-        });
-    }
+
 }
 </script>
 
