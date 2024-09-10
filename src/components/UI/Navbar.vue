@@ -16,7 +16,7 @@
                 <span></span>
                 <span></span>
             </div>
-            <div class="navbar__hamburger-modal" v-if="hamburger" @click="closeHamburger">
+            <div class="navbar__hamburger-modal" @wheel.prevent @touchmove.prevent @scroll.prevent v-if="hamburger" @click="closeHamburger">
                 <span class="navbar__hamburger-modal_item" @click="$router.push('/')">Главная</span>
                 <span class="navbar__hamburger-modal_item" @click="$router.push('/lore')">Лор</span>
                 <span class="navbar__hamburger-modal_item" @click="$router.push('/types')">Стихии</span>

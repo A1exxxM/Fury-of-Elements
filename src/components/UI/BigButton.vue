@@ -1,7 +1,7 @@
 <template>
-    <li class="button">
+    <button class="button">
         <slot></slot>
-    </li>
+    </button>
 </template>
 
 <script>
@@ -24,7 +24,11 @@ export default {
         color: #000;
         border: 2px solid #fff;
         transition: 0.6s all;
-        &:hover {
+        &:disabled {
+            opacity: 0.5;
+            cursor: auto;
+        }
+        &:hover:enabled {
             background-color: #000;
             color: #fff;
             

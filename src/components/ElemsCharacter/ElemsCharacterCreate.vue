@@ -4,11 +4,10 @@
         <div class="creation__wrapper">
             <input v-show="step == 0" v-model="character.name" type="text" class="creation__name">
 
-
             <big-button 
-            v-show="step == 1" 
+            v-show="step == 1"
             @click="selectClass(item)" 
-            class="creation__class" :class="{'creation__class-active': this.character.class === item.id}" 
+            class="creation__class" :class="{'creation__class-active': this.character.class === item.id}"
             :key="item" v-for="item in $store.state.classes">
                 {{ item.title }}
             </big-button>
@@ -78,12 +77,18 @@
 
             <div class="creation__end" v-show="step == 8">
                 <elems-character-list class="creation__charlist"></elems-character-list>
-                <div class="creation__end-id">ID: work in progress</div>
             </div>
 
         </div>
-        <big-button class="creation__button" v-show="this.step < 8" @click="changeStep">Продолжить</big-button>
-        <big-button class="creation__button" v-show="this.step == 8" @click="createCharacter()">Скачать</big-button>
+        <big-button class="creation__button" v-show="step == 0" :disabled="character.name == 0" @click="changeStep">Продолжить</big-button>
+        <big-button class="creation__button" v-show="step == 1" @click="changeStep">Продолжить</big-button>
+        <big-button class="creation__button" v-show="step == 2" :disabled="character.insight == ''" @click="changeStep">Продолжить</big-button>
+        <big-button class="creation__button" v-show="step == 3" :disabled="character.triggers.length < 3" @click="changeStep">Продолжить</big-button>
+        <big-button class="creation__button" v-show="step == 4" :disabled="character.skill == ''" @click="changeStep">Продолжить</big-button>
+        <big-button class="creation__button" v-show="step == 5" :disabled="character.weapons.base == '' || character.weapons.class == ''" @click="changeStep">Продолжить</big-button>
+        <big-button class="creation__button" v-show="step == 6" :disabled="character.armor ==''" @click="changeStep">Продолжить</big-button>
+        <big-button class="creation__button" v-show="step == 7" :disabled="character.equip ==''" @click="changeStep">Продолжить</big-button>
+        <big-button class="creation__button" v-show="step == 8" @click="createCharacter()">Скачать</big-button>
     </section>
 </template>
 

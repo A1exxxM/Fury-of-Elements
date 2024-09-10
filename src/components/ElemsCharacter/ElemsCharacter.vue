@@ -4,14 +4,13 @@
         <rules-list>
             <rules-item>Данный функционал ещё находится в разработке</rules-item>
             <rules-item>Переходите к созданию персонажа после ознакомления со всеми механиками</rules-item>
-            <rules-item>Используйте специальный id для поиска персонажа (появится позже)</rules-item>
         </rules-list>
         
         <div class="character__wrapper">
             <big-button class="character__button" @click="$router.push('/character/create')">Создать Персонажа</big-button>
         </div>
         <h2 class="character__error">Возможность создавать персонажа на данном типе устройств появится позже</h2>
-        <page-title>Созданные персонажи:</page-title>
+        <page-title class="character__preview">Созданные персонажи:</page-title>
         <div class="character__list">
             <big-button class="character__list-item" @click="selectCharacter(item)" v-for="item in charactersName" :key="item">{{ item.name }}</big-button>
         </div>
@@ -85,7 +84,7 @@ export default {
     }
     @media (max-width:992px) {
         .character {
-            &__wrapper {
+            &__wrapper,&__list,&__preview {
                 display: none;
             }
             &__error {
