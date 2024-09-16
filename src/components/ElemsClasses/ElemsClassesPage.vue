@@ -4,21 +4,26 @@
     <div class="classes__wrapper">
       <div class="classes__info">
         <div class="classes__icon">
-			<img :src="$store.state.classes[$store.state.currentClass].img" :alt="$store.state.classes[$store.state.currentClass].title">
+			<img :src="classesCurrentItem.img" :alt="classesCurrentItem.title">
 		</div>
-        <big-button class="classes__page" @click="$router.push(`/classes/${$store.state.classes[$store.state.currentClass].path}`)">Подробнее</big-button>
+        <big-button class="classes__page" @click="$router.push(`/classes/${classesCurrentItem.path}`)">Подробнее</big-button>
       </div>
-      <div class="classes__descr">{{ $store.state.classes[$store.state.currentClass].descr }}
+      <div class="classes__descr">{{ classesCurrentItem.descr }}
       </div>
     </div>
     <ul class="classes__list">
-		<big-button class="classes__list-item" :class="{'button__active' : item.id ==  $store.state.currentClass}" :key="item" v-for="item in $store.state.classes" @click="selectClass(item)">{{ item.title }}</big-button>
+		<big-button class="classes__list-item" :class="{'button__active' : item.id ==  classesActiveItem}" :key="item" v-for="item in classesList" @click="selectClass(item)">{{ item.title }}</big-button>
 	</ul>
   </section>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
+	computed: {
+		...mapGetters(['classesCurrentItem','classesList','classesActiveItem'])
+	},
 	methods: {
 		selectClass(item) {
 			this.$store.commit('selectClass', item)

@@ -1,21 +1,26 @@
 <template>
     <section class="elems__triggers container">
         <page-title>Триггеры</page-title>
-        <subtitle-vue>{{ $store.state.triggers.descr }}</subtitle-vue>
+        <subtitle-vue>{{ triggersDescr }}</subtitle-vue>
         <card-item class="elems__triggers-preview">
             <template v-slot:card-item_title>
-                <span>{{$store.state.triggers.items.first[0].title}}</span>
+                <span>{{ triggersFirstTitle }}</span>
             </template>
             <template v-slot:card-item_descr>
-                <span>{{$store.state.triggers.items.first[0].descr}}</span>
+                <span>{{ triggersFirstDescr }}</span>
             </template>
         </card-item>
     </section>
 </template>
 
 <script>
-export default {
+import { mapGetters } from 'vuex';
 
+
+export default {
+    computed: {
+        ...mapGetters(['triggersDescr','triggersFirstTitle','triggersFirstDescr'])
+    }
 }
 </script>
 

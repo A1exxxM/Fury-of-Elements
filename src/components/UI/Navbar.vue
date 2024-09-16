@@ -1,14 +1,7 @@
 <template>
-    <nav class="navbar animate__animated animate__fadeInDown" :style="{backgroundColor: $store.state.hoverColor}">
+    <nav class="navbar animate__animated animate__fadeInDown" :style="{backgroundColor: hoverColor}">
         <div class="navbar__btns container">
-            <span class="navbar__btns-item" @click="$router.push('/')">Главная</span>
-            <span class="navbar__btns-item" @click="$router.push('/lore')">Лор</span>
-            <span class="navbar__btns-item" @click="$router.push('/types')">Стихии</span>
-            <span class="navbar__btns-item" @click="$router.push('/classes')">Классы</span>
-            <span class="navbar__btns-item" @click="$router.push('/insights')">Озарения</span>
-            <span class="navbar__btns-item" @click="$router.push('/triggers')">Триггеры</span>
-            <span class="navbar__btns-item" @click="$router.push('/skills')">Боевые умения</span>
-            <span class="navbar__btns-item" @click="$router.push('/character')">Персонаж</span>
+            <span class="navbar__btns-item" :key="item" v-for="item in routes" @click="$router.push(item.path)">{{ item.name }}</span>
         </div>
         <div class="navbar__hamburger">
             <div class="navbar__hamburger-btn" @click="openHamburger">
@@ -17,14 +10,7 @@
                 <span></span>
             </div>
             <div class="navbar__hamburger-modal" @wheel.prevent @touchmove.prevent @scroll.prevent v-if="hamburger" @click="closeHamburger">
-                <span class="navbar__hamburger-modal_item" @click="$router.push('/')">Главная</span>
-                <span class="navbar__hamburger-modal_item" @click="$router.push('/lore')">Лор</span>
-                <span class="navbar__hamburger-modal_item" @click="$router.push('/types')">Стихии</span>
-                <span class="navbar__hamburger-modal_item" @click="$router.push('/classes')">Классы</span>
-                <span class="navbar__hamburger-modal_item" @click="$router.push('/insights')">Озарения</span>
-                <span class="navbar__hamburger-modal_item" @click="$router.push('/triggers')">Триггеры</span>
-                <span class="navbar__hamburger-modal_item" @click="$router.push('/skills')">Боевые умения</span>
-                <span class="navbar__hamburger-modal_item" @click="$router.push('/character')">Персонаж</span>
+                <span class="navbar__hamburger-modal_item" :key="item" v-for="item in routes" @click="$router.push(item.path)">{{ item.name }}</span>
             </div>
         </div>
     </nav>
@@ -32,10 +18,50 @@
 
 <script>
 export default {
+    computed: {
+        hoverColor() {
+            return this.$store.getters.hoverColor
+        }
+    },
     name: 'elems-navbar',
     data() {
         return {
-            hamburger: false
+            hamburger: false,
+            routes: [
+                {
+                    path: '/',
+                    name: 'Главная'
+                },
+                {
+                    path: '/lore',
+                    name: 'Лор'
+                },
+                {
+                    path: '/types',
+                    name: 'Стихии'
+                },
+                {
+                    path: '/classes',
+                    name: 'Классы'
+                },
+                {
+                    path: '/insights',
+                    name: 'Озарения'
+                },
+                {
+                    path: '/triggers',
+                    name: 'Триггеры'
+                },
+                {
+                    path: '/skills',
+                    name: 'Боевые умения'
+                },
+                {
+                    path: '/character',
+                    name: 'Персонаж'
+                },
+            ]
+
         }
     },
     methods: {

@@ -216,7 +216,7 @@ const store = createStore({
 							{title: 'Ударная волна', descr: 'Вы делаете сильный удар перед собой на 15 футов, поражая все цели на пути. Каждая следующая цель получает на 1 единицу урона больше. Наносит урон = показателю на вашем классовом оружии'},
 						],
 						spells: [
-							{title: 'Воззвание стихий', descr: 'Накладывает на цель случайную стихийную метку. Бросьте 1d8: 1,2 - стихия крови, 3,4 - стихия природы, 5,6 - стихия света, 7,8 - стихия пустоты'},
+							{title: 'Воззвание стихий', descr: 'Накладывает на цель случайную стихийную метку. Бросьте 1d8: 1,2 - стихия крови, 3,4 - стихия природы, 5,6 - стихия света, 7,8 - стихия пустоты. Если метка совпадает с ранее наложенной - перебросьте 1d8'},
 							{title: 'Эпицентр', descr: 'Вы стягиваете всех вокруг себя в радиусе 20 футов, за каждую стянутую цель вы получаете 2 щита'},
 						]
 						},
@@ -267,7 +267,7 @@ const store = createStore({
 						name: 'Легкая броня барда',
 						speed: '6',
 						resist: '11',
-						value: `Скорость 11, Стихийная защита 11`
+						value: `Скорость 6, Стихийная защита 11`
 					}
 				],
 				abilities: {
@@ -279,7 +279,7 @@ const store = createStore({
 							{title: 'Смертельные аккорды', descr: 'Вы поражаете цель звуковой волной. Бросьте кубик 1d10: четный бросок - вы отталкиваете цель на 5 футов, нечетный бросок - цель притягивается на 5 футов. Траекторию выбираете вы, после броска. Наносит урон, равный значению, выпавшему на кубике'},
 						],
 						spells: [
-							{title: 'Воззвание стихий', descr: 'Накладывает на цель случайную стихийную метку. Бросьте 1d8: 1,2 - стихия крови, 3,4 - стихия природы, 5,6 - стихия света, 7,8 - стихия пустоты'},
+							{title: 'Воззвание стихий', descr: 'Накладывает на цель случайную стихийную метку. Бросьте 1d8: 1,2 - стихия крови, 3,4 - стихия природы, 5,6 - стихия света, 7,8 - стихия пустоты. Если метка совпадает с ранее наложенной - перебросьте 1d8'},
 							{title: 'Мелодия жизни', descr: 'Выберите цель и бросьте кубик 1d8, восстановите здоровье цели на это значение. Четный бросок - следующая атака цели нанесет на 1d6 урона больше, нечетный бросок - накладывает на цель 1d6 щит'},
 						]
 						},
@@ -292,7 +292,7 @@ const store = createStore({
 				path: 'mage',
 				title: 'Маг',
 				descr: 'Острый ум магов позволяет им влиять на ход событий в бою. Маги в совершенстве познали стихии и готовы использовать эти знания для победы в любом столкновении',
-				ability: 'Магическое созерцание: У мага отсутствует свой ход. Все способности мага - ответные действия. За 1 круг ходов маг может использовать 2 способности и 1 заклинание',
+				ability: 'Магическое созерцание: У мага отсутствует свой ход. Все способности мага - ответные действия. За 1 круг ходов маг может использовать 2 способности и 1 заклинание. Передвигаться маг может во время использования первого заклинания или способности за круг',
 				img: '/Fury-of-Elements/dist/assets/img/classes/mage.jpg',
 				subclasses: [
 					{title: 'Подкласс первый', descr: 'Краткое описание', element: 'Элемент'},
@@ -342,7 +342,7 @@ const store = createStore({
 							{title: 'Магический барьер', descr: 'Если вы стали целью вражеской способности - вы получаете 1d6 щит до получения урона'},
 						],
 						spells: [
-							{title: 'Эхо стихий', descr: 'Если на цель только что была наложена стихийная метка, бросьте 1d8, чтобы вызвать сопряжение со случайной стихией: 1,2 - стихия крови, 3,4 - стихия природы, 5,6 - стихия света, 7,8 - стихия пустоты'},
+							{title: 'Эхо стихий', descr: 'Если на цель только что была наложена стихийная метка, бросьте 1d8, чтобы вызвать сопряжение со случайной стихией: 1,2 - стихия крови, 3,4 - стихия природы, 5,6 - стихия света, 7,8 - стихия пустоты.  Если метка совпадает с ранее наложенной - перебросьте 1d8'},
 							{title: 'Дестабилизация', descr: 'При применении противником заклинания -  вы можете рассеять его и нанести урон 1d6 радиусом 10 футов вокруг цели'},
 						]
 						},
@@ -405,7 +405,7 @@ const store = createStore({
 							{title: 'Двойник', descr: 'Вы копируете последнюю использованную союзником способность и используете её. Слияние с тенями: вы можете скопировать заклинание и использовать его, как способность'},
 						],
 						spells: [
-							{title: 'Воззвание стихий', descr: 'Накладывает на цель случайную стихийную метку. Бросьте 1d8: 1,2 - стихия крови, 3,4 - стихия природы, 5,6 - стихия света, 7,8 - стихия пустоты. Слияние с тенями: вы можете сократить выбор до двух стихий'},
+							{title: 'Воззвание стихий', descr: 'Накладывает на цель случайную стихийную метку. Бросьте 1d8: 1,2 - стихия крови, 3,4 - стихия природы, 5,6 - стихия света, 7,8 - стихия пустоты. Слияние с тенями: вы можете сократить выбор до двух стихий. Если метка совпадает с ранее наложенной - перебросьте 1d8'},
 							{title: 'Фиал токсина', descr: 'Вы заражаете цель токсином: она получает 1d4 урона в начале вашего хода. Эффект действует 3 хода. Слияние с тенями: вы получаете щит в размере нанесенного от токсина урона'},
 						]
 						},
@@ -664,8 +664,89 @@ const store = createStore({
 		state.currentLoadedCharacter = item
 	  }
     },
-    actions: {
-    }
+    getters: {
+		worldPreviewImg(state) {
+			return state.lore.world[0].img
+		},
+		elementsList(state) {
+			return state.elements
+		},
+		classesList(state) {
+			return state.classes
+		},
+		insightsDescr(state) {
+			return state.insights.descr
+		},
+		insightsList(state) {
+			return state.insights.items
+		},
+		triggersDescr(state) {
+			return state.triggers.descr
+		},
+		triggersFirstTitle(state) {
+			return state.triggers.items.first[0].title
+		},
+		triggersFirstDescr(state) {
+			return state.triggers.items.first[0].descr
+		},
+		skillsDescr(state) {
+			return state.skills.descr
+		},
+		skillsFirstTitle(state) {
+			return state.skills.items[0].title
+		},
+		skillsFirstDescr(state) {
+			return state.skills.items[0].descr
+		},
+		hoverColor(state) {
+			return state.hoverColor
+		},
+		loreWorld(state) {
+			return state.lore.world
+		},
+		loreCountries(state) {
+			return state.lore.countries
+		},
+		typesElements(state) {
+			return state.elements
+		},
+		typesRules(state) {
+			return state.typesRules
+		},
+		typesCurrentElement(state) {
+			return state.elements[state.currentType]
+		},
+		typesCurrentCombination(state) {
+			return state.currentCombination
+		},
+		typesActiveCombinations(state) {
+			return state.currentCombinations
+		},
+		classesCurrentItem(state) {
+			return state.classes[state.currentClass]
+		},
+		classesList(state) {
+			return state.classes
+		},
+		classesActiveItem(state) {
+			return state.currentClass
+		},
+		classesCurrentType(state) {
+			return state.currentClassType
+		},
+		classesProperties(state) {
+			return state.properties
+		},
+		insightsList(state) {
+			return state.insights
+		},
+		insightsRules(state) {
+			return state.insightsRules
+		},
+		insightsCurrentItem(state) {
+			return state.currentInsight
+		}
+	}
   })
 
 export default store;

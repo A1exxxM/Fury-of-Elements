@@ -1,9 +1,9 @@
 <template>
   <section class="elems__properties container">
     <page-title>Озарения</page-title>
-    <subtitle-vue>{{ $store.state.insights.descr }}</subtitle-vue>
+    <subtitle-vue>{{ insightsDescr }}</subtitle-vue>
     <div class="elems__properties-wrapper">
-        <div class="elems__properties-property" :key="item" v-for="item in $store.state.insights.items">
+        <div class="elems__properties-property" :key="item" v-for="item in insightsList">
             <div class="elems__properties-property_title">{{ item.title }}</div>
             <div class="elems__properties-property_descr">{{ item.descr }}</div>
         </div>
@@ -12,8 +12,11 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 export default {
-
+    computed: {
+        ...mapGetters(['insightsDescr','insightsList'])
+    }
 }
 </script>
 

@@ -1,28 +1,32 @@
 <template>
     <section class="class container page">
-        <h2 class="class__title">{{$store.state.classes[$store.state.currentClass].title}}</h2>
+        <h2 class="class__title">{{classesCurrentItem.title}}</h2>
         
-        <div class="class__ability">Особенность класса: <br> <span>{{$store.state.classes[$store.state.currentClass].ability}}</span></div>
+        <div class="class__ability">Особенность класса: <br> <span>{{classesCurrentItem.ability}}</span></div>
         <div class="class__properties">
             <div class="class__properties-type">
-                <big-button :class="{'button__active': property.value == $store.state.currentClassType}" :key="property" v-for="property in $store.state.properties" @click="changeCurrentClassType(property)">{{property.name}}</big-button>
+                <big-button :class="{'button__active': property.value == classesCurrentType}" :key="property" v-for="property in classesProperties" @click="changeCurrentClassType(property)">{{property.name}}</big-button>
             </div>
             <div class="class__properties-preview">
                 <div class="class__properties-preview_item" 
                 :key="item"
-                v-for="item in $store.state.classes[$store.state.currentClass][$store.state.currentClassType]">
+                v-for="item in classesCurrentItem[classesCurrentType]">
                 <span>{{item.name}}</span>: {{item.value}}</div>
             </div>
         </div>
         
-        <abilities :id="level.id" :key="level" v-for="level in $store.state.classes[$store.state.currentClass].abilities.level"></abilities>
+        <abilities :id="level.id" :key="level" v-for="level in classesCurrentItem.abilities.level"></abilities>
         
     </section>
 </template>
 
 <script>
-export default {
+import { mapGetters } from 'vuex';
 
+export default {
+    computed: {
+        ...mapGetters(['classesCurrentItem', 'classesCurrentType', 'classesProperties'])
+    },
     methods: {
         changeCurrentClassType(property) {
             this.$store.commit('changeCurrentClassType', property)

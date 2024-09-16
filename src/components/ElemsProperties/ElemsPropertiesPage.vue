@@ -1,23 +1,28 @@
 <template>
     <section class="properties container page animate__animated animate__fadeIn">
         <page-title>Озарения</page-title>
-        <subtitle-vue>{{$store.state.insights.descr}}</subtitle-vue>
+        <subtitle-vue>{{insightsList.descr}}</subtitle-vue>
         <rules-list>
-            <rules-item :key="item" v-for="item in $store.state.insightsRules">{{ item }}</rules-item>
+            <rules-item :key="item" v-for="item in insightsRules">{{ item }}</rules-item>
         </rules-list>
         <h3 class="properties__subtitle">Виды озарений</h3>
         <div class="properties__wrapper">
             <ul class="properties__types">
                 <li class="properties__types-item" @click="changeCurrentInsight(item)"
-                :key="item" v-for="item in $store.state.insights.items">{{ item.title }} <span class="properties__types-item_underline" :class="{'properties__types-item_underline-active': item.id == $store.state.currentInsight}"></span></li>
+                :key="item" v-for="item in insightsList.items">{{ item.title }} <span class="properties__types-item_underline" :class="{'properties__types-item_underline-active': item.id == insightsCurrentItem}"></span></li>
             </ul>
-            <div class="properties__preview">{{$store.state.insights.items[$store.state.currentInsight].descr}}</div>
+            <div class="properties__preview">{{insightsList.items[insightsCurrentItem].descr}}</div>
         </div>
     </section>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
+    computed: {
+        ...mapGetters(['insightsList', 'insightsRules', 'insightsCurrentItem'])
+    },
     methods: {
         changeCurrentInsight(item) {
             this.$store.commit('changeCurrentInsight', item);

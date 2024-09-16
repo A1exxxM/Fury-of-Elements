@@ -2,7 +2,7 @@
     <section class="lore page container animate__animated animate__fadeIn">
         <page-title>Лор</page-title>
         <div class="lore__preview">Как и эта настольная ролевая игра - мир игры только начинает своё развитие. Ниже будут описаны основные фрагменты в истории Дайтона, именно так называется наш мир. Но помните: это лишь описание игрового мира, вы вольны сами писать свои невероятные истории. Возможно в будущем они будут расширять общий лор Дайтона, как настоящие легенды. Если у вас есть свои идеи для миров - смело развивайте их. Возможно вы захотите создать новый материк в рамках мира Дайтон со своими законами и правилами, а может даже и поменять стилистику под времена Постапокалипсиса современности. Я считаю, что систему FoE можно адаптировать под различные эпохи и стилистики, в планах создать необходимый набор инструментов для ДМа под реализацию этих задач. Также в планах создать библиотеку с ваншотами и компаниями, которые вы сможете адаптировать и свободно использовать в своих партиях</div>
-        <div class="lore__world" :key="item" v-for="item in $store.state.lore.world">
+        <div class="lore__world" :key="item" v-for="item in loreWorld">
             <h3 class="lore__world-title">{{ item.title }}</h3>
             <div class="lore__world-wrapper">
                 <img class="lore__world-map" :src="item.img"  alt="#">
@@ -10,7 +10,7 @@
             </div>
             
         </div>
-        <div class="lore__countries" :key="country" v-for="country in $store.state.lore.countries">
+        <div class="lore__countries" :key="country" v-for="country in loreCountries">
             <h2 class="lore__countries-title">{{ country.title }}</h2>
             <img :src="country.img" alt="#" class="lore__countries-img">
             <div class="lore__countries-descr">{{ country.descr }}</div>
@@ -19,8 +19,13 @@
 </template>
 
 <script>
-export default {
+import { mapGetters } from 'vuex';
 
+
+export default {
+    computed: {
+        ...mapGetters(['loreWorld','loreCountries'])
+    }
 }
 </script>
 

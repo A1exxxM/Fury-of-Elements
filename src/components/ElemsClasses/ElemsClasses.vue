@@ -3,7 +3,7 @@
         <page-title>Классы</page-title>
       <subtitle-vue>На данный момент представлены 4 класса, в дальнейших обновлениях их количество будет увеличиваться<br> Каждый класс обладает своей врожденной особенностью, а также получит 3 уникальных подкласса, которые расширяют его возможности</subtitle-vue>
       <ul class="elems__classes-items">
-        <li class="elems__classes-items_item" :key="item" v-for="item in $store.state.classes">
+        <li class="elems__classes-items_item" :key="item" v-for="item in classesList">
                 <img class="elems__classes-items_img" :src="item.img" :alt="item.title">
                 <div class="elems__classes-items_title">{{item.title}}</div>
         </li>
@@ -13,7 +13,11 @@
   
 <script>
   export default {
-  
+  computed: {
+    classesList() {
+        return this.$store.getters.classesList
+    }
+  }
   }
 </script>
   
